@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour {
     private string VERTICAL_AXIS = "Vertical";
 
     private float _moveSpeed = .1f;
-    private float _jumpStrength = 220f;
-
-    public bool isGrounded;
+    private float _jumpStrength = 350f;
+    
+    public static bool isGrounded;
     private bool _isJumping = false;
     private bool _isJumpCanceled = false;
 
@@ -29,14 +29,15 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             _rb.AddForce(Vector2.up * _jumpStrength);
-            isGrounded = false;
-        } 
+        }
+         if (Input.GetButtonUp("Jump") && !isGrounded)
+        {
+            _rb.AddForce(-Vector2.up * _jumpStrength/2);
+        }
 
     }
 
     void FixedUpdate () {
         transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
-
-
     }
 }
