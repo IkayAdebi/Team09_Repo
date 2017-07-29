@@ -12,8 +12,6 @@ public class PlayerMovement : MonoBehaviour {
     private float _jumpStrength = 350f;
     
     public static bool isGrounded;
-    private bool _isJumping = false;
-    private bool _isJumpCanceled = false;
 
     private Rigidbody2D _rb;
     #endregion
