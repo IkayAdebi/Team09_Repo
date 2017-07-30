@@ -11,9 +11,11 @@ public class Player : MonoBehaviour {
     public string VERTICAL_AXIS = "Vertical";
 
     private float _moveSpeed = .1f;
-    private float _jumpStrength = 350f;
+    private float _jumpStrength = 7f; // old value: 350
     
     public static bool isGrounded;
+    private bool isJumping;
+    private bool isJumpCanceled;
 
     private Rigidbody2D _rb;
     #endregion
@@ -34,15 +36,25 @@ public class Player : MonoBehaviour {
     {
         transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
 
-        //Jumping Logic
+        // Sets Jumping flags to true based off of player 1's input
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            _rb.AddForce(Vector2.up * _jumpStrength);
+            isJumping = true;
         }
-        if (Input.GetButtonUp("Jump") && !isGrounded)
+        if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < 0) && !isGrounded)
         {
-            _rb.AddForce(-Vector2.up * _jumpStrength / 2);
+            isJumpCanceled = true;
         }
+
+        ////Old Jumping Logic
+        //if (Input.GetButtonDown("Jump") && isGrounded)
+        //{
+        //    _rb.AddForce(Vector2.up * _jumpStrength);
+        //}
+        //if (Input.GetButtonUp("Jump") && !isGrounded)
+        //{
+        //    _rb.AddForce(-Vector2.up * _jumpStrength / 1.5f);
+        //}
 
         // Allows Player to go down faster
         if (Input.GetAxis(VERTICAL_AXIS) < 0 && !isGrounded)
@@ -52,18 +64,41 @@ public class Player : MonoBehaviour {
 
     }
 
+    private void FixedUpdate()
+    {
+        // Default jump
+        if (isJumping)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, _jumpStrength);
+            isJumping = false;
+        }
+
+        // If jump button is held for shorter time, player jumps at a shorter height
+        if (isJumpCanceled)
+        {
+            if (_rb.velocity.y > _jumpStrength / 2)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, _jumpStrength / 2);
+            }
+            isJumpCanceled = false;
+        }
+
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "DeathBoundary")
         {
-            transform.position = new Vector3(-6, 0, 0);
+            StartCoroutine(OnDeath());
         }
     }
 
 
-    private void OnDeath()
+    IEnumerator OnDeath()
     {
-        
+        yield return new WaitForSeconds(.5f);
+        transform.position = new Vector3(-6, 0, 0);
     }
 
 }
