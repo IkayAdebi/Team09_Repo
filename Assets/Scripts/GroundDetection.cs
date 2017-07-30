@@ -7,12 +7,12 @@ public class GroundDetection : MonoBehaviour {
     // Checks if player is on the ground.
     void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerMovement.isGrounded = true;
+        Player.isGrounded = true;
     }
 
     // Checks if player has left the ground.
     void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerMovement.isGrounded = false;
+        Player.isGrounded = false;
     }
 }

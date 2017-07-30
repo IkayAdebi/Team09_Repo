@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class Player : MonoBehaviour {
 
     #region Variables
-    private string HORIZONTAL_AXIS = "Horizontal";
-    private string VERTICAL_AXIS = "Vertical";
+
+    #region Movement Info
+    public string HORIZONTAL_AXIS = "Horizontal";
 
     private float _moveSpeed = .1f;
     private float _jumpStrength = 350f;
@@ -14,6 +15,12 @@ public class PlayerMovement : MonoBehaviour {
     public static bool isGrounded;
 
     private Rigidbody2D _rb;
+    #endregion
+
+    #region Health Info
+    public bool isAlive = true;
+    #endregion
+
     #endregion
 
     // Use this for initialization
@@ -38,4 +45,15 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate () {
         transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
     }
+
+    private void TakeDamage()
+    {
+
+    }
+
+    private void OnDeath()
+    {
+        
+    }
+
 }
