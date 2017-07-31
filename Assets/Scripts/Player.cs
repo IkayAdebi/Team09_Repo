@@ -7,11 +7,12 @@ public class Player : MonoBehaviour {
     #region Variables
 
     #region Movement Info
-    public string HORIZONTAL_AXIS = "Horizontal";
-    public string VERTICAL_AXIS = "Vertical";
+    public const string HORIZONTAL_AXIS = "Horizontal";
+    public const string VERTICAL_AXIS = "Vertical";
 
     private float _moveSpeed = .1f;
-    private float _jumpStrength = 7f; // old value: 350
+    private float _jumpStrength = 10f; // old value: 350
+    private const float MAX_FALL_SPEED = -15;
     
     public static bool isGrounded;
     private bool isJumping;
@@ -30,38 +31,39 @@ public class Player : MonoBehaviour {
     void Start () {
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
+        _rb.gravityScale *= 2;
 	}
 
     void Update()
     {
-        transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
-
-        // Sets Jumping flags to true based off of player 1's input
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (isAlive)
         {
-            isJumping = true;
-        }
-        if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < 0) && !isGrounded)
-        {
-            isJumpCanceled = true;
-        }
+            transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
 
-        ////Old Jumping Logic
-        //if (Input.GetButtonDown("Jump") && isGrounded)
-        //{
-        //    _rb.AddForce(Vector2.up * _jumpStrength);
-        //}
-        //if (Input.GetButtonUp("Jump") && !isGrounded)
-        //{
-        //    _rb.AddForce(-Vector2.up * _jumpStrength / 1.5f);
-        //}
+            // Sets Jumping flags to true based off of player 1's input
+            if (Input.GetButtonDown("Jump") && isGrounded) //&& !(Input.GetAxis(VERTICAL_AXIS) < 0))
+            {
+                isJumping = true;
+            }
+            if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < 0) && !isGrounded)
+            {
+                isJumpCanceled = true;
+            }
 
-        // Allows Player to go down faster
-        if (Input.GetAxis(VERTICAL_AXIS) < 0 && !isGrounded)
-        {
-            _rb.AddForce(-Vector2.up * _jumpStrength / 2);
+            // Allows Player to go down faster
+            if (Input.GetAxis(VERTICAL_AXIS) < 0 && !isGrounded)
+            {
+                _rb.AddForce(-Vector2.up * 60);
+                isJumpCanceled = true;
+            }
+
+            // Sets a max speed for player's acceleration;
+            if (_rb.velocity.y < MAX_FALL_SPEED)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, MAX_FALL_SPEED);
+            }
         }
-
+        print(_rb.velocity.y);
     }
 
     private void FixedUpdate()
@@ -71,12 +73,12 @@ public class Player : MonoBehaviour {
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _jumpStrength);
             isJumping = false;
-        }
+        } 
 
         // If jump button is held for shorter time, player jumps at a shorter height
         if (isJumpCanceled)
         {
-            if (_rb.velocity.y > _jumpStrength / 2)
+            if (_rb.velocity.y > _jumpStrength /2)
             {
                 _rb.velocity = new Vector2(_rb.velocity.x, _jumpStrength / 2);
             }
@@ -88,17 +90,22 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Collision Detection for Falling
         if (collision.gameObject.tag == "DeathBoundary")
         {
-            StartCoroutine(OnDeath());
+            isAlive = false;
+            StartCoroutine(OnDeath());        
         }
     }
 
 
     IEnumerator OnDeath()
     {
+        // Death and Respawn Logic
         yield return new WaitForSeconds(.5f);
-        transform.position = new Vector3(-6, 0, 0);
+        transform.position = new Vector3(-8, 3, 0);
+        isAlive = true;
+        _rb.velocity = new Vector2(0, 0);
     }
 
 }
