@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapePodPitchDemo", "Assembly-CSharp.csproj", "{EE4A5E7E-5E6C-8F0F-CC84-CF26E1E0BAEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE4A5E7E-5E6C-8F0F-CC84-CF26E1E0BAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4A5E7E-5E6C-8F0F-CC84-CF26E1E0BAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4A5E7E-5E6C-8F0F-CC84-CF26E1E0BAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4A5E7E-5E6C-8F0F-CC84-CF26E1E0BAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
