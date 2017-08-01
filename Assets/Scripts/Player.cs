@@ -87,7 +87,6 @@ public class Player : MonoBehaviour {
                 _rb.velocity = new Vector2(_rb.velocity.x, MAX_FALL_SPEED);
             }
         }
-        print(_rb.velocity.y);
     }
 
     private void FixedUpdate()
