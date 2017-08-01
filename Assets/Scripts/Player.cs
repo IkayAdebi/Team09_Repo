@@ -10,8 +10,8 @@ public class Player : MonoBehaviour {
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VERTICAL_AXIS = "Vertical";
 
-    private float _moveSpeed = .1f;
-    private float _jumpStrength = 16f; // old value: 350
+    private float _moveSpeed = .15f;
+    private float _jumpStrength = 20f; // old value: 350
     private const float MAX_FALL_SPEED = -20f;
     
     public static bool isGrounded;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
     void Start () {
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
-        _rb.gravityScale *= 2.5f;
+        _rb.gravityScale *= 3f;
         anim = GetComponent<Animator>();
 	}
 
@@ -88,6 +88,7 @@ public class Player : MonoBehaviour {
             }
         }
         print(_rb.velocity.y);
+
     }
 
     private void FixedUpdate()
@@ -126,7 +127,7 @@ public class Player : MonoBehaviour {
     {
         // Death and Respawn Logic
         yield return new WaitForSeconds(.5f);
-        transform.position = new Vector3(-8, 3, 0);
+        transform.position = new Vector3(-10, 3, 0);
         isAlive = true;
         _rb.velocity = new Vector2(0, 0);
     }
