@@ -45,11 +45,23 @@ public class Player : MonoBehaviour {
             if (Input.GetAxis(HORIZONTAL_AXIS) != 0)
             {
                 anim.SetBool("isWalking", true);
-            } else
+
+                // Flip Character based off of movement
+                if (Input.GetAxis(HORIZONTAL_AXIS) > 0)
+                {
+                    transform.localScale = new Vector3(.6f, .6f, 1);
+                }
+                else
+                {
+                    transform.localScale = new Vector3(-.6f, .6f, 1);
+                }
+            }
+            else
             {
                 anim.SetBool("isWalking", false);
             }
 
+            // Move character left and right
             transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
 
             // Sets Jumping flags to true based off of player 1's input
