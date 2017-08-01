@@ -19,6 +19,8 @@ public class Player : MonoBehaviour {
     private bool isJumpCanceled;
 
     private Rigidbody2D _rb;
+
+    Animator anim;
     #endregion
 
     #region Health Info
@@ -32,12 +34,22 @@ public class Player : MonoBehaviour {
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
         _rb.gravityScale *= 2;
+        anim = GetComponent<Animator>();
 	}
 
     void Update()
     {
         if (isAlive)
         {
+            // Walking animation
+            if (Input.GetAxis(HORIZONTAL_AXIS) != 0)
+            {
+                anim.SetBool("isWalking", true);
+            } else
+            {
+                anim.SetBool("isWalking", false);
+            }
+
             transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
 
             // Sets Jumping flags to true based off of player 1's input
@@ -97,7 +109,6 @@ public class Player : MonoBehaviour {
             StartCoroutine(OnDeath());        
         }
     }
-
 
     IEnumerator OnDeath()
     {
