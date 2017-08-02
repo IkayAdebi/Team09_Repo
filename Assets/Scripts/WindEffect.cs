@@ -33,8 +33,7 @@ public class WindEffect : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("I need to blow my nose which could also be a wind pun hahaha");
-
+        
         Vector2 windVector = new Vector2(-windSpeed, 0);
         if (other.gameObject.tag == "Player")
         {
