@@ -10,9 +10,9 @@ public class Player : MonoBehaviour {
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VERTICAL_AXIS = "Vertical";
 
-    private float _moveSpeed = .15f;
-    private float _jumpStrength = 20f; // old value: 350
-    private const float MAX_FALL_SPEED = -20f;
+    private float _moveSpeed = .1f;
+    private float _jumpStrength = 11f; // old value: 350
+    private const float MAX_FALL_SPEED = -15;
     
     public static bool isGrounded;
     private bool isJumping;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
     void Start () {
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
-        _rb.gravityScale *= 3f;
+        _rb.gravityScale *= 2;
         anim = GetComponent<Animator>();
 	}
 
@@ -49,11 +49,11 @@ public class Player : MonoBehaviour {
                 // Flip Character based off of movement
                 if (Input.GetAxis(HORIZONTAL_AXIS) > 0)
                 {
-                    transform.localScale = new Vector3(1, 1, 1);
+                    transform.localScale = new Vector3(.6f, .6f, 1);
                 }
                 else
                 {
-                    transform.localScale = new Vector3(-1, 1, 1);
+                    transform.localScale = new Vector3(-.6f, .6f, 1);
                 }
             }
             else
@@ -65,11 +65,11 @@ public class Player : MonoBehaviour {
             transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
 
             // Sets Jumping flags to true based off of player 1's input
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            if (Input.GetButtonDown("Jump") && isGrounded) //&& !(Input.GetAxis(VERTICAL_AXIS) < 0))
             {
                 isJumping = true;
             }
-            if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < -0.5f) && !isGrounded)
+            if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < 0) && !isGrounded)
             {
                 isJumpCanceled = true;
             }
@@ -87,8 +87,6 @@ public class Player : MonoBehaviour {
                 _rb.velocity = new Vector2(_rb.velocity.x, MAX_FALL_SPEED);
             }
         }
-        print(_rb.velocity.y);
-
     }
 
     private void FixedUpdate()
@@ -127,7 +125,7 @@ public class Player : MonoBehaviour {
     {
         // Death and Respawn Logic
         yield return new WaitForSeconds(.5f);
-        transform.position = new Vector3(-10, 3, 0);
+        transform.position = new Vector3(-8, 3, 0);
         isAlive = true;
         _rb.velocity = new Vector2(0, 0);
     }
