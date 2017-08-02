@@ -60,7 +60,6 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(counter);
         if (isAlive)
         {
             // Walking animation
