@@ -50,8 +50,17 @@
      <Compile Include="Assets\LightningStrike.cs" />
      <Compile Include="Assets\Scripts\GroundDetection.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
      <Compile Include="Assets\Scripts\WindEffect.cs" />
+=======
+     <Compile Include="Assets\Scripts\SnowEffect.cs" />
+     <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
+     <Compile Include="Assets\Scripts\WindEffect.cs" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Team09_Repo/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+>>>>>>> 0d0d13d46cc75e169ee6979e4d2afa7db9f4e0e4
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
