@@ -16,6 +16,7 @@ public class Flame_Effect : MonoBehaviour {
 	void Update () {
         if (isGrounded)
         {
+            Debug.Log("Woah... woah");
             Instantiate(flame, transform);
             gameObject.SetActive(false);
             transform.position = new Vector3(-100, -100, -100);

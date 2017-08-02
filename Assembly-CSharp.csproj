@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{646DF171-FA1D-6F19-34E9-7B6264A97969}</ProjectGuid>
+    <ProjectGuid>{81F999A8-3A99-A54C-C916-E8B85DAAB2C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,6 +56,9 @@
      <Compile Include="Assets\Scripts\SnowEffect.cs" />
      <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
      <Compile Include="Assets\Scripts\WindEffect.cs" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>C:/Team09_Repo/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -80,9 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{B2DE1D0C-F880-E931-2ED4-95EEA1F60B1F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{0D85DF3B-24F0-6EE0-2FFD-63D15F49F1D4}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{09ED5D60-299C-1DB6-8B55-F19D8229304C}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
