@@ -22,7 +22,7 @@ public class WindEffect : MonoBehaviour {
     {
         for(int c = 0; c < lifetime + 1; c++)
         {
-            if( c == lifetime)
+            if(c == lifetime)
             {
                 gameObject.SetActive(false);
                 transform.position = new Vector3 (-100, -100, -100);

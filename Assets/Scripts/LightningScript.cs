@@ -9,16 +9,16 @@ public class LightningScript : MonoBehaviour {
 
 		// Use this for initialization
 		void Start () {
-		
+		//StartCoroutine ("timeTilDeath");
 		}
 
 		// Update is called once per frame
 		void Update () {
-		//if (Input.GetKeyUp (KeyCode.P)) { 
+	//	if (Input.GetKeyUp (KeyCode.P)) { 
 			StartCoroutine ("timeTilDeath");
-		//}
-		}
 
+		}	
+	//}
 		IEnumerator timeTilDeath()
 		{
 		yield return new WaitForSeconds(1);
@@ -30,9 +30,23 @@ public class LightningScript : MonoBehaviour {
 	
 		gameObject.SetActive(false);
 		transform.position = new Vector3 (-100, -100, -100);
-				}
-
+				} 
 		
+	/**IEnumerator timeTilDeath()
+	{
+		for(int c = 0; c < lifetime + 1; c++)
+		{
+			if(c == lifetime)
+			{
+				gameObject.SetActive(false);
+				transform.position = new Vector3 (-100, -100, -100);
+			}
+			yield return new WaitForSeconds(1);
+		Instantiate (bolt, transform.position, Quaternion.identity);
+		}
+	} **/
+
+
 	//saved
 			
 	//void OnTriggerStay2D(Collider2D other)
