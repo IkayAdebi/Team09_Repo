@@ -10,8 +10,8 @@ public class Player : MonoBehaviour {
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VERTICAL_AXIS = "Vertical";
 
-    private float _moveSpeed = .15f;
-    private float _jumpStrength = 22f; // old value: 350
+    public float moveSpeed = .15f;
+    private float _jumpStrength = 20f; // old value: 350
     private const float MAX_FALL_SPEED = -25f;
     
     public static bool isGrounded;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
     void Start () {
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
-        _rb.gravityScale *= 3.4f;
+        _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
 	}
 
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour {
             }
 
             // Move character left and right
-            transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * _moveSpeed, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
 
             // Sets Jumping flags to true based off of player 1's input
             if (Input.GetButtonDown("Jump") && isGrounded) //&& !(Input.GetAxis(VERTICAL_AXIS) < 0))
