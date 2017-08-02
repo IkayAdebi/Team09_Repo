@@ -29,6 +29,7 @@ public class WeatherPlayer : MonoBehaviour
     public Sprite fireSprite;
 
     public GameObject wind;
+	public GameObject light;
     //public GameObject snow;
     //public GameObject lightning;
     //public GameObject earthquake;
@@ -88,7 +89,9 @@ public class WeatherPlayer : MonoBehaviour
             }
             else if (weatherChoose[weatherIndex] == "Lightning")
             {
-           //     Instantiate(lightning, transform);
+				light.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+			
+				light.SetActive(true);
             }
             else if (weatherChoose[weatherIndex] == "Earthquake")
             {
