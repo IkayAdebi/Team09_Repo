@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
@@ -28,18 +29,38 @@ public class Player : MonoBehaviour {
     public bool isAlive = true;
     #endregion
 
+    #region Death Info
+    public static int counter;
+    public int lifetime;
+    public Text counterText;
+    #endregion
+
     #endregion
 
     // Use this for initialization
     void Start () {
+        counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
         _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
+        StartCoroutine("countToDeath");
 	}
+
+    IEnumerator countToDeath()
+    {
+        for(int c = 0; c < lifetime; c++)
+        {
+            counter--;
+            counterText.text = "Seconds left: " + (counter + 1);
+            yield return new WaitForSeconds(1);
+        }
+        SceneManager.LoadScene("GameOver");
+    }
 
     void Update()
     {
+        Debug.Log(counter);
         if (isAlive)
         {
             // Walking animation
