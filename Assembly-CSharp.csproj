@@ -46,9 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\LightningScript.cs" />
-     <Compile Include="Assets\LightningStrike.cs" />
      <Compile Include="Assets\Scripts\GroundDetection.cs" />
+     <Compile Include="Assets\Scripts\LightningScript.cs" />
+     <Compile Include="Assets\Scripts\LightningStrike.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\SnowEffect.cs" />
      <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
