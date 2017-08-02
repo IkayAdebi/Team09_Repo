@@ -5,11 +5,12 @@ using UnityEngine;
 public class SnowEffect : MonoBehaviour {
 
     public Player playerOne;
+    private float initialState;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        initialState = playerOne.moveSpeed;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,8 +23,19 @@ public class SnowEffect : MonoBehaviour {
         
         if (other.gameObject.tag == "Player")
         {
-            playerOne.
+            playerOne.moveSpeed = initialState / 2;
         }
 
+        Debug.Log(playerOne.moveSpeed);
+    }
+
+    void onTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("Goodbye");
+        if (other.gameObject.tag == "Player")
+        {
+            playerOne.moveSpeed = initialState;
+        }
+        Debug.Log(playerOne.moveSpeed);
     }
 }
