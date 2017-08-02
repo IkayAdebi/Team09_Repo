@@ -11,8 +11,8 @@ public class Player : MonoBehaviour {
     public const string VERTICAL_AXIS = "Vertical";
 
     private float _moveSpeed = .15f;
-    private float _jumpStrength = 20f; // old value: 350
-    private const float MAX_FALL_SPEED = -20;
+    private float _jumpStrength = 22f; // old value: 350
+    private const float MAX_FALL_SPEED = -25f;
     
     public static bool isGrounded;
     private bool isJumping;
