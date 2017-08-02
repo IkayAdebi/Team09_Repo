@@ -4,38 +4,51 @@ using UnityEngine;
 
 public class SnowEffect : MonoBehaviour {
 
-    public Player playerOne;
+    public GameObject playerOne;
+    private Player playerScript;
+    public int lifetime;
     private float initialState;
 
 	// Use this for initialization
 	void Start () {
-        initialState = playerOne.moveSpeed;
+        playerScript = playerOne.GetComponent < Player >();
+        initialState = playerScript.moveSpeed;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            StartCoroutine("timeTilDeath");
+        }
+    }
+
+    IEnumerator timeTilDeath()
+    {
+        for (int c = 0; c < lifetime + 1; c++)
+        {
+            yield return new WaitForSeconds(1);
+        }
+        playerScript.moveSpeed = initialState;
+        gameObject.SetActive(false);
+        transform.position = new Vector3(-100, -100, -100);
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("I need to blow my nose which could also be a wind pun hahaha");
         
         if (other.gameObject.tag == "Player")
         {
-            playerOne.moveSpeed = initialState / 2;
+            playerScript.moveSpeed = initialState / 9;
         }
-
-        Debug.Log(playerOne.moveSpeed);
+        
     }
 
-    void onTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Goodbye");
         if (other.gameObject.tag == "Player")
         {
-            playerOne.moveSpeed = initialState;
+            playerScript.moveSpeed = initialState;
         }
-        Debug.Log(playerOne.moveSpeed);
     }
 }
