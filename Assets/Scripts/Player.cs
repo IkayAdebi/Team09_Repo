@@ -35,6 +35,10 @@ public class Player : MonoBehaviour {
     public Text counterText;
     #endregion
 
+    #region Miscellaneous Info
+    public bool hasSeed;
+    #endregion
+
     #endregion
 
     // Use this for initialization
@@ -45,6 +49,7 @@ public class Player : MonoBehaviour {
         _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
         StartCoroutine("countToDeath");
+        hasSeed = false;
 	}
 
     IEnumerator countToDeath()
@@ -143,6 +148,16 @@ public class Player : MonoBehaviour {
         else if(collision.gameObject.name == "Win")
         {
             SceneManager.LoadScene("YouWin");
+        }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Collectible")
+        {
+            hasSeed = true;
         }
     }
 
