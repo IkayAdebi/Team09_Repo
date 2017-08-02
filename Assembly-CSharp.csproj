@@ -48,6 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\GroundDetection.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\SnowEffect.cs" />
+     <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
+     <Compile Include="Assets\Scripts\WindEffect.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Team09_Repo/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
