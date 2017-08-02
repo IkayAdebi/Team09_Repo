@@ -7,6 +7,7 @@ public class SnowEffect : MonoBehaviour {
     public GameObject playerOne;
     private Player playerScript;
     public int lifetime;
+    public int divisionFactor;
     private float initialState;
 
 	// Use this for initialization
@@ -39,7 +40,7 @@ public class SnowEffect : MonoBehaviour {
         
         if (other.gameObject.tag == "Player")
         {
-            playerScript.moveSpeed = initialState / 9;
+            playerScript.moveSpeed = initialState / divisionFactor;
         }
         
     }
