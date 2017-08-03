@@ -127,12 +127,12 @@ public class WeatherPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             weatherIndex++;
-            if(weatherIndex == 5)
+            if (weatherIndex == 5)
             {
                 weatherIndex = 0;
             }
         }
-        Vector3 spawnPoint = new Vector3(transform.position.x, transform.position.y -4, 0);
+        Vector3 spawnPoint = new Vector3(transform.position.x, transform.position.y - 4, 0);
         if (windCounter == 0)
         {
             StartCoroutine("countUpWind");
@@ -157,8 +157,8 @@ public class WeatherPlayer : MonoBehaviour
         {
             if (weatherChoose[weatherIndex] == "Wind")
             {
-                
-                if(windCounter >= windCooldown)
+
+                if (windCounter >= windCooldown)
                 {
                     wind.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     wind.SetActive(true);
@@ -202,11 +202,11 @@ public class WeatherPlayer : MonoBehaviour
                 }
             }
         }
-        
-        if (Input.GetKey(KeyCode.Y)) { 
+
+        if (Input.GetKey(KeyCode.Y) || Input.GetAxis(P2_VERTICAL_AXIS) > 0) { 
             vDirectionIndex = 0;
         }
-        else if (Input.GetKey(KeyCode.H))
+        else if (Input.GetKey(KeyCode.H) || Input.GetAxis(P2_VERTICAL_AXIS) < 0)
         {
             vDirectionIndex = 1;
         }
@@ -214,11 +214,11 @@ public class WeatherPlayer : MonoBehaviour
         {
             vDirectionIndex = 2;
         }
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKey(KeyCode.G) || Input.GetAxis(P2_HORIZONTAL_AXIS) < 0)
         {
             hDirectionIndex = 0;
         }
-        else if (Input.GetKey(KeyCode.J))
+        else if (Input.GetKey(KeyCode.J) || Input.GetAxis(P2_HORIZONTAL_AXIS) > 0)
         {
             hDirectionIndex = 1;
         }
