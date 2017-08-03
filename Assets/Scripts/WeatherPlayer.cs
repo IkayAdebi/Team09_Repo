@@ -6,8 +6,8 @@ public class WeatherPlayer : MonoBehaviour
 {
 
     private Rigidbody2D _rb;
-    public const string HORIZONTAL_AXIS = "Horizontal1";
-    public const string VERTICAL_AXIS = "Vertical1";
+    public const string HORIZONTAL_AXIS = "Horizontal";
+    public const string VERTICAL_AXIS = "Vertical";
     private float _moveSpeed = .2f;
 
     private List<string> weatherChoose = new List<string>();
@@ -194,11 +194,10 @@ public class WeatherPlayer : MonoBehaviour
             }
         }
         
-        if (Input.GetKey(KeyCode.Y) || Input.GetAxis(VERTICAL_AXIS) > 0)
-        {
+        if (Input.GetKey(KeyCode.Y)) { 
             vDirectionIndex = 0;
         }
-        else if (Input.GetKey(KeyCode.H) || Input.GetAxis(VERTICAL_AXIS) < 0)
+        else if (Input.GetKey(KeyCode.H))
         {
             vDirectionIndex = 1;
         }
@@ -206,11 +205,11 @@ public class WeatherPlayer : MonoBehaviour
         {
             vDirectionIndex = 2;
         }
-        if (Input.GetKey(KeyCode.G) || Input.GetAxis(HORIZONTAL_AXIS) < 0)
+        if (Input.GetKey(KeyCode.G))
         {
             hDirectionIndex = 0;
         }
-        else if (Input.GetKey(KeyCode.J) || Input.GetAxis(HORIZONTAL_AXIS) > 0)
+        else if (Input.GetKey(KeyCode.J))
         {
             hDirectionIndex = 1;
         }
