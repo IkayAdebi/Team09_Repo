@@ -15,10 +15,11 @@ public class Flame_Effect : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        gameObject.transform.rotation.z.Equals(0);
         gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.up * 20);
         if (isGrounded)
         {
-            gameObject.transform.rotation.z.Equals(0);
+           
             flame.SetActive(true);
             flame.GetComponent<HeatDeath>().doIDie = true;
             flame.transform.position = gameObject.transform.position;
