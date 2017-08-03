@@ -9,7 +9,6 @@ public class Flame_Effect : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        Debug.Log("Hi");
         isGrounded = false;
     }
 	
@@ -20,7 +19,6 @@ public class Flame_Effect : MonoBehaviour {
         if (isGrounded)
         {
             gameObject.transform.rotation.z.Equals(0);
-            Debug.Log("Yip");
             flame.SetActive(true);
             flame.GetComponent<HeatDeath>().doIDie = true;
             flame.transform.position = gameObject.transform.position;
