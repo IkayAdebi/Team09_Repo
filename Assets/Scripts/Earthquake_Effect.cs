@@ -22,6 +22,7 @@ public class Earthquake_Effect : MonoBehaviour {
         {
 
             quake.SetActive(true);
+            quake.GetComponent<Earthquake_Result>().enable = true;
             quake.transform.position = gameObject.transform.position;
             isGrounded = false;
             gameObject.GetComponent<Rigidbody2D>().IsAwake();
