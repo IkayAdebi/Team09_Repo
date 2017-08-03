@@ -140,26 +140,34 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Collision Detection for Falling
-        if (collision.gameObject.tag == "DeathBoundary")
+		if (collision.gameObject.tag == "Win")
+		{
+			Debug.Log ("Hello");
+			SceneManager.LoadScene ("YouWin");
+		
+		}
+		else if (collision.gameObject.tag == "DeathBoundary")
         {
             isAlive = false;
             StartCoroutine(OnDeath());        
         }
-        else if(collision.gameObject.name == "Win")
-        {
-            SceneManager.LoadScene("YouWin");
-        }
+
+		else if (collision.gameObject.tag == "Collectible")
+		{
+			hasSeed = true;
+		}
+        
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   /** private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "Collectible")
         {
             hasSeed = true;
         }
-    }
+    } **/
 
     IEnumerator OnDeath()
     {

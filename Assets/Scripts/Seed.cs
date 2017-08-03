@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class Seed : MonoBehaviour {
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+
+
+
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+			
+			StartCoroutine("timeTilDeath");
         }
     }
+
+
+
+	IEnumerator timeTilDeath() {
+		yield return new WaitForSeconds(1);
+		Destroy(gameObject);
+
+	}
+
+
 }
