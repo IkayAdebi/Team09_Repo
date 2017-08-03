@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
                 {
                     transform.localScale = new Vector3(1, 1, 1);
                 }
-                else
+                else if (Input.GetAxis(HORIZONTAL_AXIS) < 0)
                 {
                     transform.localScale = new Vector3(-1, 1, 1);
                 }
