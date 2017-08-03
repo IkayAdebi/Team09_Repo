@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Dirt.cs" />
+     <Compile Include="Assets\Scripts\Earthquake_Effect.cs" />
      <Compile Include="Assets\Scripts\Flame_Effect.cs" />
      <Compile Include="Assets\Scripts\GroundDetection.cs" />
      <Compile Include="Assets\Scripts\HeatDeath.cs" />
