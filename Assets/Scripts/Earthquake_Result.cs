@@ -9,26 +9,28 @@ public class Earthquake_Result : MonoBehaviour {
     public float gapTime;
     public GameObject snow_effect;
     public GameObject player;
+    private Player playerScript;
 
     IEnumerator startQuake()
     {
 
-        player.GetComponent<Player>().increaseSpeed = true;
-        player.GetComponent<Player>().moveSpeed = player.GetComponent<Player>().moveSpeed * 2;
+        playerScript.increaseSpeed = true;
+        playerScript.moveSpeed = player.GetComponent<Player>().moveSpeed * 2;
         yield return new WaitForSeconds(gapTime);
-        player.GetComponent<Player>().increaseSpeed = false;
-        player.GetComponent<Player>().moveSpeed = player.GetComponent<Player>().moveSpeed / 2;
+        playerScript.increaseSpeed = false;
+        playerScript.moveSpeed = player.GetComponent<Player>().moveSpeed / 2;
         //flip left and right
         yield return new WaitForSeconds(gapTime);
         //reset controls
-        //disable jump
+        playerScript.stopJump = true;
+        playerScript.isJumping = false;
         yield return new WaitForSeconds(gapTime);
-        //re-enable jump
-        player.GetComponent<Player>().lowerSpeed = true;
-        player.GetComponent<Player>().moveSpeed = player.GetComponent<Player>().moveSpeed / 2;
+        playerScript.stopJump = false;
+        playerScript.lowerSpeed = true;
+        playerScript.moveSpeed = player.GetComponent<Player>().moveSpeed / 2;
         yield return new WaitForSeconds(gapTime);
-        player.GetComponent<Player>().lowerSpeed = false;
-        player.GetComponent<Player>().moveSpeed = player.GetComponent<Player>().moveSpeed * 2;
+        playerScript.lowerSpeed = false;
+        playerScript.moveSpeed = player.GetComponent<Player>().moveSpeed * 2;
         //Flip Direction
         yield return new WaitForSeconds(gapTime);
         //Reset Direction
@@ -48,6 +50,7 @@ public class Earthquake_Result : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        playerScript = player.GetComponent<Player>();
         if (snow_effect.activeSelf)
         {
             normalSpeed = player.GetComponent<Player>().moveSpeed * snow_effect.GetComponent<SnowEffect>().divisionFactor;
@@ -62,7 +65,6 @@ public class Earthquake_Result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.GetComponent<Player>().moveSpeed);
         if (enable)
         {
             enable = false;

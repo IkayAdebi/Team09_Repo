@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
     private const float MAX_FALL_SPEED = -25f;
     
     public static bool isGrounded;
-    private bool isJumping;
+    public bool isJumping;
     private bool isJumpCanceled;
 
     private Rigidbody2D _rb;
@@ -36,8 +36,9 @@ public class Player : MonoBehaviour {
     #endregion
 
     #region earthquakeEffects
-    public bool lowerSpeed;
-    public bool increaseSpeed;
+    public bool lowerSpeed = false;
+    public bool increaseSpeed = false;
+    public bool stopJump = false;
     #endregion
 
     #region Miscellaneous Info
@@ -98,7 +99,10 @@ public class Player : MonoBehaviour {
             // Sets Jumping flags to true based off of player 1's input
             if (Input.GetButtonDown("Jump") && isGrounded) //&& !(Input.GetAxis(VERTICAL_AXIS) < 0))
             {
-                isJumping = true;
+                if (!stopJump)
+                {
+                    isJumping = true;
+                }
             }
             if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < -0.5f) && !isGrounded)
             {
