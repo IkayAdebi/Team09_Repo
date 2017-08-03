@@ -8,7 +8,7 @@ public class WeatherPlayer : MonoBehaviour
     private Rigidbody2D _rb;
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VERTICAL_AXIS = "Vertical";
-    private float _moveSpeed = .1f;
+    private float _moveSpeed = .2f;
 
     private List<string> weatherChoose = new List<string>();
     //Order 0: Wind 1: Snow 2: Lightning 3: Earthquake 4: Fire

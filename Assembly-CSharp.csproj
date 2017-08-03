@@ -46,8 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Dirt.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
+     <Compile Include="Assets\Scripts\Dirt.cs" />
      <Compile Include="Assets\Scripts\Flame_Effect.cs" />
      <Compile Include="Assets\Scripts\GroundDetection.cs" />
      <Compile Include="Assets\Scripts\HeatDeath.cs" />
@@ -58,6 +58,8 @@
      <Compile Include="Assets\Scripts\SnowEffect.cs" />
      <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
      <Compile Include="Assets\Scripts\WindEffect.cs" />
+     <Compile Include="Assets\Win.cs" />
+     <Compile Include="Assets\panning.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

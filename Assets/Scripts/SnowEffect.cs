@@ -9,11 +9,13 @@ public class SnowEffect : MonoBehaviour {
     public int lifetime;
     public int divisionFactor;
     private float initialState;
+	AudioSource snowy;
 
 	// Use this for initialization
 	void Start () {
         playerScript = playerOne.GetComponent < Player >();
         initialState = playerScript.moveSpeed;
+		snowy = gameObject.GetComponent<AudioSource> ();
     }
 	
 	// Update is called once per frame

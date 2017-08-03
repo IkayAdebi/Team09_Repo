@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WindEffect : MonoBehaviour {
-
+	AudioSource windy;
     public float windSpeed;
     public int lifetime;
 
 	// Use this for initialization
 	void Start () {
-		
+		windy = gameObject.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,7 @@ public class WindEffect : MonoBehaviour {
 
     IEnumerator timeTilDeath()
     {
+		//windy.Play ();
         for(int c = 0; c < lifetime + 1; c++)
         {
             if(c == lifetime)
@@ -27,6 +28,7 @@ public class WindEffect : MonoBehaviour {
                 gameObject.SetActive(false);
                 transform.position = new Vector3 (-100, -100, -100);
             }
+
             yield return new WaitForSeconds(1);
         }
     }

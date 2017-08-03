@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LightningScript : MonoBehaviour {
-
+	AudioSource lightning;
 			public int lifetime;
 	public GameObject bolt;
 
 		// Use this for initialization
 		void Start () {
+		lightning = gameObject.GetComponent<AudioSource> ();
+
 		//StartCoroutine ("timeTilDeath");
 		}
 
@@ -23,7 +25,7 @@ public class LightningScript : MonoBehaviour {
 		{
 		yield return new WaitForSeconds(1);
 	
-	
+		lightning.Play ();
 		Instantiate (bolt, transform.position, Quaternion.identity);
 
 		yield return new WaitForSeconds(1);
