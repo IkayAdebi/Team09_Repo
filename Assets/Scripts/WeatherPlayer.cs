@@ -6,8 +6,8 @@ public class WeatherPlayer : MonoBehaviour
 {
 
     private Rigidbody2D _rb;
-    public const string HORIZONTAL_AXIS = "Horizontal";
-    public const string VERTICAL_AXIS = "Vertical";
+    public const string P2_HORIZONTAL_AXIS = "P2_Horizontal";
+    public const string P2_VERTICAL_AXIS = "P2_Vertical";
     private float _moveSpeed = .2f;
 
     private List<string> weatherChoose = new List<string>();
