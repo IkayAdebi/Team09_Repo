@@ -34,6 +34,62 @@ public class WeatherPlayer : MonoBehaviour
     //public GameObject earthquake;
     public GameObject fire;
 
+    private float windCounter = 0;
+    private float lightningCounter = 0;
+    private float snowCounter = 0;
+    private float earthquakeCounter = 0;
+    private float fireCounter = 0;
+    public float windCooldown;
+    public float lightningCooldown;
+    public float snowCooldown;
+    public float earthquakeCooldown;
+    public float fireCooldown;
+
+    IEnumerator countUpWind()
+    {
+        for (float c = 0; c < windCooldown; c = c + 0.1f)
+        {
+            windCounter = windCounter + .1f;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
+    IEnumerator countUpSnow()
+    {
+        for (float c = 0; c < snowCooldown; c = c + 0.1f)
+        {
+            snowCounter = snowCounter + .1f;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
+    IEnumerator countUpLightning()
+    {
+        for (float c = 0; c < lightningCooldown; c = c + 0.1f)
+        {
+            lightningCounter = lightningCounter + .1f;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
+    IEnumerator countUpEarthquake()
+    {
+        for (float c = 0; c < earthquakeCooldown; c = c + 0.1f)
+        {
+            earthquakeCounter = earthquakeCounter + .1f;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
+    IEnumerator countUpFire()
+    {
+        for (float c = 0; c < fireCooldown; c = c + 0.1f)
+        {
+            fireCounter = fireCounter + .1f;
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -52,6 +108,11 @@ public class WeatherPlayer : MonoBehaviour
         currentHDirection.Add("Right");
         currentVDirection.Add("Still");
         currentHDirection.Add("Still");
+        windCounter = windCooldown;
+        snowCounter = snowCooldown;
+        lightningCounter = lightningCooldown;
+        earthquakeCounter = earthquakeCooldown;
+        fireCounter = fireCooldown;
     }
 
     // Update is called once per frame
@@ -78,20 +139,42 @@ public class WeatherPlayer : MonoBehaviour
         {
             if (weatherChoose[weatherIndex] == "Wind")
             {
-               
-                wind.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-                wind.SetActive(true);
+                if (windCounter == 0)
+                {
+                    StartCoroutine("countUpWind");
+                }
+                else if(windCounter >= windCooldown)
+                {
+                    wind.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                    wind.SetActive(true);
+                    windCounter = 0;
+                }
             }
             else if (weatherChoose[weatherIndex] == "Snow")
             {
-                snow.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                snow.SetActive(true);
+                if (snowCounter == 0)
+                {
+                    StartCoroutine("countUpSnow");
+                }
+                else if (snowCounter >= snowCooldown)
+                {
+                    snow.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                    snow.SetActive(true);
+                    snowCounter = 0;
+                }
             }
             else if (weatherChoose[weatherIndex] == "Lightning")
             {
-				lightning.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-			
-				lightning.SetActive(true);
+                if (lightningCounter == 0)
+                {
+                    StartCoroutine("countUpLightning");
+                }
+                else if (lightningCounter >= lightningCooldown)
+                {
+                    lightning.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                    lightningCounter = 0;
+                    lightning.SetActive(true);
+                }
             }
             else if (weatherChoose[weatherIndex] == "Earthquake")
             {
@@ -99,9 +182,16 @@ public class WeatherPlayer : MonoBehaviour
             }
             else
             {
-                fire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
-                fire.SetActive(true);
+                if (fireCounter == 0)
+                {
+                    StartCoroutine("countUpFire");
+                }
+                else if (fireCounter >= fireCooldown)
+                {
+                    fire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                    fireCounter = 0;
+                    fire.SetActive(true);
+                }
             }
         }
         
