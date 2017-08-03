@@ -31,7 +31,7 @@ public class WeatherPlayer : MonoBehaviour
     public GameObject wind;
 	public GameObject lightning;
     public GameObject snow;
-    //public GameObject earthquake;
+    public GameObject earthquake;
     public GameObject fire;
 
     public float windCounter = 0;
@@ -181,7 +181,12 @@ public class WeatherPlayer : MonoBehaviour
             }
             else if (weatherChoose[weatherIndex] == "Earthquake")
             {
-            //    Instantiate(earthquake, transform);
+                if (earthquakeCounter >= earthquakeCooldown)
+                {
+                    earthquake.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                    earthquakeCounter = 0;
+                    earthquake.SetActive(true);
+                }
             }
             else
             {
