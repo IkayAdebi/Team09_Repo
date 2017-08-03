@@ -7,17 +7,25 @@ public class Flame_Effect : MonoBehaviour {
     private bool isGrounded;
     public GameObject flame;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
+        Debug.Log("Hi");
         isGrounded = false;
-	}
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.up * 20);
         if (isGrounded)
         {
-            Debug.Log("Woah... woah");
-            Instantiate(flame, transform);
+            gameObject.transform.rotation.z.Equals(0);
+            Debug.Log("Yip");
+            flame.SetActive(true);
+            flame.GetComponent<HeatDeath>().doIDie = true;
+            flame.transform.position = gameObject.transform.position;
+            isGrounded = false;
+            gameObject.GetComponent<Rigidbody2D>().IsAwake();
             gameObject.SetActive(false);
             transform.position = new Vector3(-100, -100, -100);
         }
@@ -31,16 +39,17 @@ public class Flame_Effect : MonoBehaviour {
             gameObject.SetActive(false);
             transform.position = new Vector3(-100, -100, -100);
         }
-        else
-        {
-            Debug.Log("Welp");
-            isGrounded = true;
-        }
+        
     }
 
-    // Checks if player has left the ground.
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        isGrounded = false;
+        if (collision.gameObject.tag == "Platform")
+        {
+            isGrounded = true;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+            gameObject.GetComponent<Rigidbody2D>().Sleep();
+        }
     }
 }

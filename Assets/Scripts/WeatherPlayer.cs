@@ -34,11 +34,11 @@ public class WeatherPlayer : MonoBehaviour
     //public GameObject earthquake;
     public GameObject fire;
 
-    private float windCounter = 0;
-    private float lightningCounter = 0;
-    private float snowCounter = 0;
-    private float earthquakeCounter = 0;
-    private float fireCounter = 0;
+    public float windCounter = 0;
+    public float lightningCounter = 0;
+    public float snowCounter = 0;
+    public float earthquakeCounter = 0;
+    public float fireCounter = 0;
     public float windCooldown;
     public float lightningCooldown;
     public float snowCooldown;
@@ -135,15 +135,28 @@ public class WeatherPlayer : MonoBehaviour
             }
         }
         Vector3 spawnPoint = new Vector3(transform.position.x, transform.position.y -4, 0);
+        if (windCounter == 0)
+        {
+            StartCoroutine("countUpWind");
+        }
+        if (snowCounter == 0)
+        {
+            StartCoroutine("countUpSnow");
+        }
+        if (lightningCounter == 0)
+        {
+            StartCoroutine("countUpLightning");
+        }
+        if (fireCounter == 0)
+        {
+            StartCoroutine("countUpFire");
+        }
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (weatherChoose[weatherIndex] == "Wind")
             {
-                if (windCounter == 0)
-                {
-                    StartCoroutine("countUpWind");
-                }
-                else if(windCounter >= windCooldown)
+                
+                if(windCounter >= windCooldown)
                 {
                     wind.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     wind.SetActive(true);
@@ -152,11 +165,7 @@ public class WeatherPlayer : MonoBehaviour
             }
             else if (weatherChoose[weatherIndex] == "Snow")
             {
-                if (snowCounter == 0)
-                {
-                    StartCoroutine("countUpSnow");
-                }
-                else if (snowCounter >= snowCooldown)
+                if (snowCounter >= snowCooldown)
                 {
                     snow.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     snow.SetActive(true);
@@ -165,11 +174,7 @@ public class WeatherPlayer : MonoBehaviour
             }
             else if (weatherChoose[weatherIndex] == "Lightning")
             {
-                if (lightningCounter == 0)
-                {
-                    StartCoroutine("countUpLightning");
-                }
-                else if (lightningCounter >= lightningCooldown)
+                if (lightningCounter >= lightningCooldown)
                 {
                     lightning.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     lightningCounter = 0;
@@ -182,11 +187,7 @@ public class WeatherPlayer : MonoBehaviour
             }
             else
             {
-                if (fireCounter == 0)
-                {
-                    StartCoroutine("countUpFire");
-                }
-                else if (fireCounter >= fireCooldown)
+                if (fireCounter >= fireCooldown)
                 {
                     fire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     fireCounter = 0;
