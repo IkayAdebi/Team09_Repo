@@ -35,6 +35,11 @@ public class Player : MonoBehaviour {
     public Text counterText;
     #endregion
 
+    #region earthquakeEffects
+    public bool lowerSpeed;
+    public bool increaseSpeed;
+    #endregion
+
     #region Miscellaneous Info
     public bool hasSeed;
     #endregion

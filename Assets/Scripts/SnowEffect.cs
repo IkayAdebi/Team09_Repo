@@ -39,19 +39,29 @@ public class SnowEffect : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        
-        if (other.gameObject.tag == "Player")
+        if (playerScript.lowerSpeed || playerScript.increaseSpeed)
         {
-            playerScript.moveSpeed = initialState / divisionFactor;
+        }
+        else {
+            if (other.gameObject.tag == "Player")
+            {
+                playerScript.moveSpeed = initialState / divisionFactor;
+            }
         }
         
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (playerScript.lowerSpeed || playerScript.increaseSpeed)
         {
-            playerScript.moveSpeed = initialState;
+        }
+        else
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                playerScript.moveSpeed = initialState;
+            }
         }
     }
 }
