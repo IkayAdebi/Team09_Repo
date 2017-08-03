@@ -145,6 +145,10 @@ public class WeatherPlayer : MonoBehaviour
         {
             StartCoroutine("countUpLightning");
         }
+        if (earthquakeCounter == 0)
+        {
+            StartCoroutine("countUpEarthquake");
+        }
         if (fireCounter == 0)
         {
             StartCoroutine("countUpFire");
