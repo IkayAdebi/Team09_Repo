@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     public const string VERTICAL_AXIS = "Vertical";
 
     public float moveSpeed = .15f;
-    private float _jumpStrength = 20f; // old value: 350
+    public float _jumpStrength = 20f; // old value: 350
     private const float MAX_FALL_SPEED = -25f;
     
     public static bool isGrounded;
@@ -39,6 +39,8 @@ public class Player : MonoBehaviour {
     public bool lowerSpeed = false;
     public bool increaseSpeed = false;
     public bool stopJump = false;
+    public bool moveRestrict = false;
+    public bool flip = false;
     #endregion
 
     #region Miscellaneous Info
@@ -74,7 +76,7 @@ public class Player : MonoBehaviour {
         if (isAlive)
         {
             // Walking animation
-            if (Input.GetAxis(HORIZONTAL_AXIS) != 0)
+            if (Input.GetAxis(HORIZONTAL_AXIS) != 0 && !moveRestrict)
             {
                 anim.SetBool("isWalking", true);
 
@@ -94,12 +96,18 @@ public class Player : MonoBehaviour {
             }
 
             // Move character left and right
-            transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+            if (!moveRestrict)
+            {
+                if (!flip)
+                    transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                else
+                    transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+            }
 
             // Sets Jumping flags to true based off of player 1's input
             if (Input.GetButtonDown("Jump") && isGrounded) //&& !(Input.GetAxis(VERTICAL_AXIS) < 0))
             {
-                if (!stopJump)
+                if (!stopJump && !moveRestrict)
                 {
                     isJumping = true;
                 }
