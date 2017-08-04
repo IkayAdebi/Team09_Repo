@@ -8,10 +8,12 @@ public class Earthquake_Result : MonoBehaviour {
     private float normalJump;
     public bool enable;
     public float gapTime;
+    public float deathTime;
     public GameObject snow_effect;
     public GameObject player;
     private Player playerScript;
     public int changeRate;
+    private bool dontDiePlease = false;
 
     IEnumerator startQuake()
     {
@@ -44,11 +46,21 @@ public class Earthquake_Result : MonoBehaviour {
         playerScript._jumpStrength = player.GetComponent<Player>()._jumpStrength * changeRate;
         gameObject.transform.position = new Vector3(-100, 100, 100);
         gameObject.SetActive(false);
+        dontDiePlease = false;
+    }
+
+    IEnumerator toDeath()
+    {
+        yield return new WaitForSeconds(deathTime);
+        gameObject.transform.position = new Vector3(-100, 100, 100);
+        gameObject.SetActive(false);
+        dontDiePlease = false;
     }
 
     // Use this for initialization
     void Start()
     {
+        StartCoroutine("toDeath");
         playerScript = player.GetComponent<Player>();
         if (snow_effect.activeSelf)
         {
@@ -65,10 +77,20 @@ public class Earthquake_Result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (enable)
+        if (enable && dontDiePlease)
         {
+            StopCoroutine("toDeath");
             enable = false;
             StartCoroutine("startQuake");
         }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+            if (other.gameObject.tag == "Player")
+            {
+                dontDiePlease = true;
+            }
+
     }
 }

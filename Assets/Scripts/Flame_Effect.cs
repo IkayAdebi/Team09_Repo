@@ -43,7 +43,7 @@ public class Flame_Effect : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform")
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
         {
             isGrounded = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

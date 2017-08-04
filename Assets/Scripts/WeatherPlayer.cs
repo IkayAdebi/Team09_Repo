@@ -45,6 +45,8 @@ public class WeatherPlayer : MonoBehaviour
     public float earthquakeCooldown;
     public float fireCooldown;
 
+    private Shake shaker;
+
     IEnumerator countUpWind()
     {
         for (float c = 0; c < windCooldown; c = c + 0.1f)
@@ -160,6 +162,7 @@ public class WeatherPlayer : MonoBehaviour
 
                 if (windCounter >= windCooldown)
                 {
+                  //  shaker.beginWind();
                     wind.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     wind.SetActive(true);
                     windCounter = 0;
@@ -169,6 +172,7 @@ public class WeatherPlayer : MonoBehaviour
             {
                 if (snowCounter >= snowCooldown)
                 {
+                  // shaker.beginSnow();
                     snow.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     snow.SetActive(true);
                     snowCounter = 0;
@@ -178,6 +182,7 @@ public class WeatherPlayer : MonoBehaviour
             {
                 if (lightningCounter >= lightningCooldown)
                 {
+                  //  shaker.beginLightning();
                     lightning.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     lightningCounter = 0;
                     lightning.SetActive(true);
@@ -187,6 +192,7 @@ public class WeatherPlayer : MonoBehaviour
             {
                 if (earthquakeCounter >= earthquakeCooldown)
                 {
+                 //   shaker.beginEarthquake();
                     earthquake.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     earthquakeCounter = 0;
                     earthquake.SetActive(true);
@@ -196,6 +202,7 @@ public class WeatherPlayer : MonoBehaviour
             {
                 if (fireCounter >= fireCooldown)
                 {
+                  //  shaker.beginFire();
                     fire.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     fireCounter = 0;
                     fire.SetActive(true);
