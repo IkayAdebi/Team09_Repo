@@ -12,6 +12,10 @@ public class Player : MonoBehaviour {
     public const string HORIZONTAL_AXIS = "Horizontal";
     public const string VERTICAL_AXIS = "Vertical";
 
+    // For Xbox controller
+    public const string P1_HORIZONTAL_AXIS = "P1_Horizontal";
+    public const string P1_VERTICAL_AXIS = "P1_Vertical";
+
     public float moveSpeed = .15f;
     public float _jumpStrength = 20f; // old value: 350
     private const float MAX_FALL_SPEED = -25f;
@@ -76,16 +80,16 @@ public class Player : MonoBehaviour {
         if (isAlive)
         {
             // Walking animation
-            if (Input.GetAxis(HORIZONTAL_AXIS) != 0 && !moveRestrict)
+            if ((Input.GetAxis(HORIZONTAL_AXIS) != 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) != 0) && !moveRestrict)
             {
                 anim.SetBool("isWalking", true);
 
                 // Flip Character based off of movement
-                if (Input.GetAxis(HORIZONTAL_AXIS) > 0)
+                if (Input.GetAxis(HORIZONTAL_AXIS) > 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) > 0.2f)
                 {
                     transform.localScale = new Vector3(1, 1, 1);
                 }
-                else if (Input.GetAxis(HORIZONTAL_AXIS) < 0)
+                else if (Input.GetAxis(HORIZONTAL_AXIS) < 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) < -0.2f)
                 {
                     transform.localScale = new Vector3(-1, 1, 1);
                 }
@@ -98,21 +102,30 @@ public class Player : MonoBehaviour {
             // Move character left and right
             if (!moveRestrict)
             {
-                if (!flip)
-                    transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                if (Input.GetAxis(P1_HORIZONTAL_AXIS) == 0)
+                    if (!flip)
+                        transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                    else
+                        transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
                 else
-                    transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                {
+                    if (!flip)
+                        transform.position = new Vector3(transform.position.x + Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                    else
+                        transform.position = new Vector3(transform.position.x - Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+
+                }
             }
 
             // Sets Jumping flags to true based off of player 1's input
-            if (Input.GetButtonDown("Jump") && isGrounded) //&& !(Input.GetAxis(VERTICAL_AXIS) < 0))
+            if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 if (!stopJump && !moveRestrict)
                 {
                     isJumping = true;
                 }
             }
-            if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < -0.5f) && !isGrounded)
+            if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < -0.5f || Input.GetAxis(P1_VERTICAL_AXIS) < -0.6f) && !isGrounded)
             {
                 isJumpCanceled = true;
             }
