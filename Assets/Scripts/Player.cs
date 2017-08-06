@@ -49,6 +49,7 @@ public class Player : MonoBehaviour {
 
     #region Miscellaneous Info
     public bool hasSeed;
+    public GameObject currentCheckpoint;
     #endregion
 
     #endregion
@@ -205,7 +206,14 @@ public class Player : MonoBehaviour {
     {
         // Death and Respawn Logic
         yield return new WaitForSeconds(.5f);
-        transform.position = new Vector3(-10, 1, 0);
+        if (currentCheckpoint == null)
+        {
+            transform.position = new Vector3(-10, 1, 0);
+        }
+        else
+        {
+            transform.position = currentCheckpoint.transform.position;
+        }
         isAlive = true;
         _rb.velocity = new Vector2(0, 0);
     }
