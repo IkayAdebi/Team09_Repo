@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/Ben/AppData/Local/Temp/Temp1_PSMoveinCave.zip/PSMove in Cave/Assets/newMotionFloor/_Scenes/main.unity
+- path: Assets/_Scenes/MainScene.unity
   isLoaded: 1
   isActive: 1
