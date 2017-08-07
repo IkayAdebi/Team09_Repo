@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B9E63AEA-F83A-F29B-0136-CCF5F75E6CEE}</ProjectGuid>
+    <ProjectGuid>{420D7D5F-53F8-2A3C-3AD4-B304BBD78EE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
+     <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Dirt.cs" />
      <Compile Include="Assets\Scripts\Earthquake_Effect.cs" />
      <Compile Include="Assets\Scripts\Earthquake_Result.cs" />
@@ -64,7 +65,7 @@
      <Compile Include="Assets\Win.cs" />
      <Compile Include="Assets\panning.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Use_team09_Repository/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/team09_RepoIII_TheThirdOne/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -90,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{8F4D4969-DDE6-7B74-0F26-FE8B8BED74FA}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{65CDC294-D0A8-AEB7-6EB2-736563F94EEF}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
