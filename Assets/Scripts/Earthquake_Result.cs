@@ -7,17 +7,29 @@ public class Earthquake_Result : MonoBehaviour {
     private float normalSpeed;
     private float normalJump;
     public bool enable;
-    public float gapTime;
+    public float effectTime;
     public float deathTime;
     public GameObject snow_effect;
     public GameObject player;
     private Player playerScript;
     public int changeRate;
     private bool dontDiePlease = false;
+    public GameObject wp;
+    public WeatherPlayer wpScript;
 
     IEnumerator startQuake()
     {
-
+        playerScript.stopJump = true;
+        playerScript.isJumping = false;
+        playerScript.flip = true;
+        yield return new WaitForSeconds(effectTime);
+        playerScript.stopJump = false;
+        playerScript.lowerSpeed = true;
+        playerScript.flip = false;
+        gameObject.transform.position = new Vector3(-100, 100, 100);
+        gameObject.SetActive(false);
+        dontDiePlease = false;
+        /* This is the old effect. I want to keep all the needed variables in case we want to do something similar later.
         playerScript.increaseSpeed = true;
         playerScript.moveSpeed = player.GetComponent<Player>().moveSpeed * changeRate;
         yield return new WaitForSeconds(gapTime);
@@ -46,7 +58,7 @@ public class Earthquake_Result : MonoBehaviour {
         playerScript._jumpStrength = player.GetComponent<Player>()._jumpStrength * changeRate;
         gameObject.transform.position = new Vector3(-100, 100, 100);
         gameObject.SetActive(false);
-        dontDiePlease = false;
+        dontDiePlease = false;*/
     }
 
     IEnumerator toDeath()
@@ -72,11 +84,19 @@ public class Earthquake_Result : MonoBehaviour {
         }
         normalJump = player.GetComponent<Player>()._jumpStrength;
         enable = true;
+        wp = GameObject.Find("Player 2");
+        wpScript = wp.GetComponent<WeatherPlayer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!wpScript.inCheck)
+        {
+            gameObject.transform.position = new Vector3(-100, 100, 100);
+            gameObject.SetActive(false);
+            dontDiePlease = false;
+        }
         if (enable && dontDiePlease)
         {
             StopCoroutine("toDeath");
