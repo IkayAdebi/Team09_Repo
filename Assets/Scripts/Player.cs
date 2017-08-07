@@ -69,7 +69,7 @@ public class Player : MonoBehaviour {
         for(int c = 0; c < lifetime; c++)
         {
             counter--;
-            counterText.text = "Seconds left: " + (counter + 1);
+			counterText.text = ""+(counter + 1);
             yield return new WaitForSeconds(1);
         }
         SceneManager.LoadScene("GameOver");
