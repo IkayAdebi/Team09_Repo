@@ -12,8 +12,8 @@ public class WindEffect : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        jsC.move(0, 0);
-        jsC.move(1, 0);
+        jsC.move(3, 10);
+        jsC.move(1, 10);
 		windy = gameObject.GetComponent<AudioSource> ();
         wp = GameObject.Find("Player 2");
         wpScript = wp.GetComponent<WeatherPlayer>();
@@ -27,7 +27,6 @@ public class WindEffect : MonoBehaviour {
 
     IEnumerator timeTilDeath()
     {
-		//windy.Play ();
         for(int c = 0; c < lifetime + 1; c++)
         {
             if(c == lifetime)

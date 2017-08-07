@@ -55,6 +55,8 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Application.targetFrameRate=  (60);
+
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
