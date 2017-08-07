@@ -10,10 +10,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectGuid>{0164E732-9AD1-2C33-9079-507375D0FE9F}</ProjectGuid>
 =======
     <ProjectGuid>{65CDC294-D0A8-AEB7-6EB2-736563F94EEF}</ProjectGuid>
 >>>>>>> db5a56a1a9882ca19419c5608c5765c640ed734c
+=======
+    <ProjectGuid>{0164E732-9AD1-2C33-9079-507375D0FE9F}</ProjectGuid>
+>>>>>>> timer
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -69,15 +73,19 @@
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+<<<<<<< HEAD
  </Reference>
  <Reference Include="UnityEngine.Timeline">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+=======
+>>>>>>> timer
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+<<<<<<< HEAD
  </Reference>
  <Reference Include="Phidget21.NET">
 <<<<<<< HEAD
@@ -85,6 +93,14 @@
 =======
  <HintPath>C:/team09_RepoIII_TheThirdOne/Assets/Plugins/Phidget21.NET.dll</HintPath>
 >>>>>>> db5a56a1a9882ca19419c5608c5765c640ed734c
+=======
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="Phidget21.NET">
+ <HintPath>F:/CMU Summer/Aere/Assets/Plugins/Phidget21.NET.dll</HintPath>
+>>>>>>> timer
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
