@@ -76,6 +76,9 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Phidget21.NET">
+      <HintPath>Assets\Plugins\Phidget21.NET.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-UnityScript-firstpass">
       <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
     </Reference>
@@ -87,27 +90,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BorderLeft.cs" />
-    <Compile Include="Assets\Freezer.cs" />
-    <Compile Include="Assets\Indicate.cs" />
-    <Compile Include="Assets\Pond.cs" />
+    <Compile Include="Assets\Scripts\BorderLeft.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Dirt.cs" />
     <Compile Include="Assets\Scripts\Earthquake_Effect.cs" />
     <Compile Include="Assets\Scripts\Earthquake_Result.cs" />
     <Compile Include="Assets\Scripts\Flame_Effect.cs" />
+    <Compile Include="Assets\Scripts\Freezer.cs" />
     <Compile Include="Assets\Scripts\GroundDetection.cs" />
     <Compile Include="Assets\Scripts\HeatDeath.cs" />
+    <Compile Include="Assets\Scripts\Indicate.cs" />
     <Compile Include="Assets\Scripts\LightningScript.cs" />
     <Compile Include="Assets\Scripts\LightningStrike.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Pond.cs" />
     <Compile Include="Assets\Scripts\Seed.cs" />
-    <Compile Include="Assets\Scripts\Shake.cs" />
     <Compile Include="Assets\Scripts\SnowEffect.cs" />
     <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
     <Compile Include="Assets\Scripts\Win.cs" />
     <Compile Include="Assets\Scripts\WindEffect.cs" />
+    <Compile Include="Assets\Scripts\earthquakeController.cs" />
     <Compile Include="Assets\Scripts\panning.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

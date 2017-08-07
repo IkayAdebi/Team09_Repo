@@ -22,11 +22,6 @@ public class LightningStrike : MonoBehaviour {
         jsC.move(2, 5);
         jsC.move(3, 5);
         yield return new WaitForSeconds(0.2f);
-        jsC.move(0, 0);
-        jsC.move(1, 0);
-        jsC.move(2, 0);
-        jsC.move(3, 0);
-        yield return new WaitForSeconds(0.2f);
         jsC.move(0, 10);
         jsC.move(1, 10);
         jsC.move(2, 10);
@@ -36,5 +31,10 @@ public class LightningStrike : MonoBehaviour {
         jsC.move(1, 0);
         jsC.move(2, 0);
         jsC.move(3, 0);
+        yield return new WaitForSeconds(0.2f);
+        jsC.move(0, 10);
+        jsC.move(1, 10);
+        jsC.move(2, 10);
+        jsC.move(3, 10);
     }
 }

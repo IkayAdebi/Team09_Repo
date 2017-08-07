@@ -46,21 +46,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BorderLeft.cs" />
-     <Compile Include="Assets\Freezer.cs" />
-     <Compile Include="Assets\Indicate.cs" />
-     <Compile Include="Assets\Pond.cs" />
+     <Compile Include="Assets\Scripts\BorderLeft.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Dirt.cs" />
      <Compile Include="Assets\Scripts\Earthquake_Effect.cs" />
      <Compile Include="Assets\Scripts\Earthquake_Result.cs" />
      <Compile Include="Assets\Scripts\Flame_Effect.cs" />
+     <Compile Include="Assets\Scripts\Freezer.cs" />
      <Compile Include="Assets\Scripts\GroundDetection.cs" />
      <Compile Include="Assets\Scripts\HeatDeath.cs" />
+     <Compile Include="Assets\Scripts\Indicate.cs" />
      <Compile Include="Assets\Scripts\LightningScript.cs" />
      <Compile Include="Assets\Scripts\LightningStrike.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Pond.cs" />
      <Compile Include="Assets\Scripts\Seed.cs" />
      <Compile Include="Assets\Scripts\SnowEffect.cs" />
      <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
