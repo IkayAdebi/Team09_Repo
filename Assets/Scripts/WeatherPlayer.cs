@@ -170,11 +170,8 @@ public class WeatherPlayer : MonoBehaviour
         {
             StartCoroutine("countUpFire");
         }
-<<<<<<< HEAD
+
         if (Input.GetKeyDown(KeyCode.P) && Input.GetButtonDown(P2_ABILITY_USE))
-=======
-        if (Input.GetKeyDown(KeyCode.P) )
->>>>>>> 8548c9ead7acb528636a05b50e85b1297eea9c7b
         {
             if (weatherChoose[weatherIndex] == "Wind")
             {
