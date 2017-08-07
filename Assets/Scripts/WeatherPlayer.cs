@@ -51,7 +51,6 @@ public class WeatherPlayer : MonoBehaviour
     public float earthquakeCooldown;
     public float fireCooldown;
 
-    private Shake shaker;
     public bool inCheck;
 
     IEnumerator countUpWind()
