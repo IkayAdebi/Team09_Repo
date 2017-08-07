@@ -14,6 +14,8 @@ public class Earthquake_Result : MonoBehaviour {
     private Player playerScript;
     public int changeRate;
     private bool dontDiePlease = false;
+    public GameObject wp;
+    public WeatherPlayer wpScript;
 
     IEnumerator startQuake()
     {
@@ -24,6 +26,9 @@ public class Earthquake_Result : MonoBehaviour {
         playerScript.stopJump = false;
         playerScript.lowerSpeed = true;
         playerScript.flip = false;
+        gameObject.transform.position = new Vector3(-100, 100, 100);
+        gameObject.SetActive(false);
+        dontDiePlease = false;
         /* This is the old effect. I want to keep all the needed variables in case we want to do something similar later.
         playerScript.increaseSpeed = true;
         playerScript.moveSpeed = player.GetComponent<Player>().moveSpeed * changeRate;
@@ -79,11 +84,19 @@ public class Earthquake_Result : MonoBehaviour {
         }
         normalJump = player.GetComponent<Player>()._jumpStrength;
         enable = true;
+        wp = GameObject.Find("Player 2");
+        wpScript = wp.GetComponent<WeatherPlayer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!wpScript.inCheck)
+        {
+            gameObject.transform.position = new Vector3(-100, 100, 100);
+            gameObject.SetActive(false);
+            dontDiePlease = false;
+        }
         if (enable && dontDiePlease)
         {
             StopCoroutine("toDeath");

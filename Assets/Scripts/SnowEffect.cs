@@ -10,12 +10,16 @@ public class SnowEffect : MonoBehaviour {
     public int divisionFactor;
     private float initialState;
 	AudioSource snowy;
+    public GameObject wp;
+    public WeatherPlayer wpScript;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         playerScript = playerOne.GetComponent < Player >();
         initialState = playerScript.moveSpeed;
 		snowy = gameObject.GetComponent<AudioSource> ();
+        wp = GameObject.Find("Player 2");
+        wpScript = wp.GetComponent<WeatherPlayer>();
     }
 	
 	// Update is called once per frame
@@ -43,7 +47,7 @@ public class SnowEffect : MonoBehaviour {
         {
         }
         else {
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player" && !wpScript.inCheck)
             {
                 playerScript.moveSpeed = initialState / divisionFactor;
             }

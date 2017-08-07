@@ -46,6 +46,7 @@ public class WeatherPlayer : MonoBehaviour
     public float fireCooldown;
 
     private Shake shaker;
+    public bool inCheck;
 
     IEnumerator countUpWind()
     {
@@ -155,7 +156,7 @@ public class WeatherPlayer : MonoBehaviour
         {
             StartCoroutine("countUpFire");
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) )
         {
             if (weatherChoose[weatherIndex] == "Wind")
             {

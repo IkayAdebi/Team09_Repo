@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class LightningStrike : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject wp;
+    public WeatherPlayer wpScript;
+    // Use this for initialization
+    void Start () {
 		StartCoroutine("Fizzle");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        wp = GameObject.Find("Player 2");
+        wpScript = wp.GetComponent<WeatherPlayer>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!wpScript.inCheck)
+        {
+            gameObject.transform.position = new Vector3(-100, 100, 100);
+            gameObject.SetActive(false);
+        }
 	}
 
 	IEnumerator Fizzle()
