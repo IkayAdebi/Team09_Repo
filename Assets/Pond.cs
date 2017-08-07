@@ -35,6 +35,7 @@ public class Pond : MonoBehaviour {
 		yield return new WaitForSeconds(3);
 		isFrozen = false;
 		player.GetComponent<Player> ().moveSpeed = 0.22F;
+		player.GetComponent<Player> ().moveRestrict = false;
 		player.GetComponent<Player> ()._jumpStrength = 20;
 		rainy.Play ();
 
@@ -46,6 +47,7 @@ public class Pond : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.P)) {
 		//	prevSpeed = player.GetComponent<Player> ().moveSpeed;
 			player.GetComponent<Player> ().moveSpeed = 0;
+			player.GetComponent<Player> ().moveRestrict = true;
 			player.GetComponent<Player> ()._jumpStrength = 0;
 			rainy.Stop ();
 			isFrozen = true;

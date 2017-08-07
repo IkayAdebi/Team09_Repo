@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Pond.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LightningStrike.cs">
     <Files>
-      <File FileName="Assets\Pond.cs" Line="70" Column="1" />
+      <File FileName="Assets\Pond.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LightningStrike.cs" Line="20" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
