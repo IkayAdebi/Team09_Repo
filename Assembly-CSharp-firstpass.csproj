@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{65CDC294-D0A8-AEB7-6EB2-736563F94EEF}</ProjectGuid>
+    <ProjectGuid>{44C811BD-F260-AA1A-E056-DA1B69FA6D56}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -71,7 +71,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Phidget21.NET">
- <HintPath>C:/team09_RepoIII_TheThirdOne/Assets/Plugins/Phidget21.NET.dll</HintPath>
+ <HintPath>C:/Users/Jake/Desktop/New Repository/Assets/Plugins/Phidget21.NET.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

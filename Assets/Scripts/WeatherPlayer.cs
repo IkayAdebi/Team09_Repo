@@ -200,6 +200,7 @@ public class WeatherPlayer : MonoBehaviour
                   //  shaker.beginLightning();
                     lightning.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                     lightningCounter = 0;
+					lightning.GetComponent<LightningScript> ().isReady = true;
                     lightning.SetActive(true);
                 }
             }
