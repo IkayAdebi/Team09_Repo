@@ -6,7 +6,6 @@ public class HeatDeath : MonoBehaviour
 {
 	public int lifetime;
 	public bool doIDie;
-
     private FloorController jsC;
 
     IEnumerator shake()

@@ -5,17 +5,25 @@ using UnityEngine;
 public class LightningStrike : MonoBehaviour {
 
     private FloorController jsC;
-    // Use this for initialization
-    void Start () {
-	    StartCoroutine("Fizzle");
+	// Use this for initialization
+	void Start () {
+				StartCoroutine("Fizzle");
+        //StartCoroutine("Crash");
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-		Destroy (gameObject);
+		//Destroy (gameObject);
 	}
+ IEnumerator Fizzle()
+	{
+		yield return new WaitForSeconds (0.3F);
+		Destroy (gameObject);
 
-	IEnumerator Fizzle()
+	}
+    
+	IEnumerator Crash()
     {
         jsC.move(0, 5);
         jsC.move(1, 5);
@@ -37,4 +45,5 @@ public class LightningStrike : MonoBehaviour {
         jsC.move(2, 10);
         jsC.move(3, 10);
     }
+    
 }

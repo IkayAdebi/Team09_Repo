@@ -6,9 +6,10 @@ public class LightningScript : MonoBehaviour {
 	AudioSource lightning;
 			public int lifetime;
 	public GameObject bolt;
-
+	public bool isReady = false;
 		// Use this for initialization
 		void Start () {
+		
 		lightning = gameObject.GetComponent<AudioSource> ();
 
 		//StartCoroutine ("timeTilDeath");
@@ -17,8 +18,9 @@ public class LightningScript : MonoBehaviour {
 		// Update is called once per frame
 		void Update () {
 	//	if (Input.GetKeyUp (KeyCode.P)) { 
+		if (isReady) {
 			StartCoroutine ("timeTilDeath");
-
+		}
 		}	
 	//}
 		IEnumerator timeTilDeath()
@@ -26,13 +28,16 @@ public class LightningScript : MonoBehaviour {
 		yield return new WaitForSeconds(1);
 	
 		lightning.Play ();
-		Instantiate (bolt, transform.position, Quaternion.identity);
-
+		if (isReady == true) {
+			Instantiate (bolt, transform.position - new Vector3(0, 12, 0), Quaternion.identity);
+			isReady = false;	
+		}
 		yield return new WaitForSeconds(1);
 	
 		gameObject.SetActive(false);
 		transform.position = new Vector3 (-100, -100, -100);
-				} 
+				
+	} 
 		
 	/**IEnumerator timeTilDeath()
 	{

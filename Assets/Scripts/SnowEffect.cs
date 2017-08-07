@@ -6,12 +6,14 @@ public class SnowEffect : MonoBehaviour {
 
     public GameObject playerOne;
     private Player playerScript;
-    public int lifetime;
     public int divisionFactor;
     private float initialState;
 	AudioSource snowy;
     public GameObject wp;
     public WeatherPlayer wpScript;
+    public int lifetime;
+    public bool doIDie;
+    private FloorController jsC;
 
     // Use this for initialization
     void Start () {
@@ -30,12 +32,33 @@ public class SnowEffect : MonoBehaviour {
         }
     }
 
+    IEnumerator jostleSnow() {
+        while (1 == 1)
+        {
+            jsC.move(0, 8);
+            jsC.move(1, 8);
+            jsC.move(2, 8);
+            jsC.move(3, 8);
+            yield return new WaitForSeconds(.1f);
+            jsC.move(0, 10);
+            jsC.move(1, 10);
+            jsC.move(2, 10);
+            jsC.move(3, 10);
+            yield return new WaitForSeconds(0.9f);
+        }
+
+    }
+
     IEnumerator timeTilDeath()
     {
         for (int c = 0; c < lifetime + 1; c++)
         {
             yield return new WaitForSeconds(1);
         }
+        jsC.move(0, 10);
+        jsC.move(1, 10);
+        jsC.move(2, 10);
+        jsC.move(3, 10);
         playerScript.moveSpeed = initialState;
         gameObject.SetActive(false);
         transform.position = new Vector3(-100, -100, -100);
@@ -49,6 +72,7 @@ public class SnowEffect : MonoBehaviour {
         else {
             if (other.gameObject.tag == "Player" && !wpScript.inCheck)
             {
+                StartCoroutine("jostleSnow");
                 playerScript.moveSpeed = initialState / divisionFactor;
             }
         }
@@ -64,6 +88,11 @@ public class SnowEffect : MonoBehaviour {
         {
             if (other.gameObject.tag == "Player")
             {
+                StopCoroutine("jostleSnow");
+                jsC.move(0, 10);
+                jsC.move(1, 10);
+                jsC.move(2, 10);
+                jsC.move(3, 10);
                 playerScript.moveSpeed = initialState;
             }
         }
