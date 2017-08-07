@@ -87,6 +87,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BorderLeft.cs" />
+    <Compile Include="Assets\Freezer.cs" />
+    <Compile Include="Assets\Indicate.cs" />
+    <Compile Include="Assets\Pond.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Dirt.cs" />
