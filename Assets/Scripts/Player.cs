@@ -57,7 +57,6 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		drop.Stop ();
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
