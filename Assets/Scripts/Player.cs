@@ -122,6 +122,7 @@ public class Player : MonoBehaviour {
             {
                 if (!stopJump && !moveRestrict)
                 {
+                    Debug.Log("Confirm");
                     isJumping = true;
                 }
             }
@@ -147,6 +148,7 @@ public class Player : MonoBehaviour {
 
     private void FixedUpdate()
     {
+       // Debug.Log("Stop " + stopJump + "IsJ" + isJumping);
         // Default jump
         if (isJumping)
         {
