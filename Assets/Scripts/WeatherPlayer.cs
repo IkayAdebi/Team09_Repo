@@ -8,6 +8,12 @@ public class WeatherPlayer : MonoBehaviour
     private Rigidbody2D _rb;
     public const string P2_HORIZONTAL_AXIS = "P2_Horizontal";
     public const string P2_VERTICAL_AXIS = "P2_Vertical";
+
+    public const string P2_ABILITY_CHANGE = "RightTrigger";
+    public const string P2_ABILITY_USE = "Button_A";
+
+    private bool isTriggerDown = false;
+
     private float _moveSpeed = .2f;
 
     private List<string> weatherChoose = new List<string>();
@@ -127,14 +133,22 @@ public class WeatherPlayer : MonoBehaviour
 
     public void inputChecker()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if ((Input.GetKeyDown(KeyCode.L) || Input.GetAxis(P2_ABILITY_CHANGE) > 0.4f) && !isTriggerDown)
         {
             weatherIndex++;
             if (weatherIndex == 5)
             {
                 weatherIndex = 0;
             }
+
+            isTriggerDown = true;
         }
+
+        if (Input.GetAxis(P2_ABILITY_CHANGE) < 0.1f)
+        {
+            isTriggerDown = false;
+        }
+
         Vector3 spawnPoint = new Vector3(transform.position.x, transform.position.y - 4, 0);
         if (windCounter == 0)
         {
@@ -156,7 +170,8 @@ public class WeatherPlayer : MonoBehaviour
         {
             StartCoroutine("countUpFire");
         }
-        if (Input.GetKeyDown(KeyCode.P) )
+
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown(P2_ABILITY_USE))
         {
             if (weatherChoose[weatherIndex] == "Wind")
             {
