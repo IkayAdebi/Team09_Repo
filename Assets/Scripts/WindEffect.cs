@@ -6,11 +6,15 @@ public class WindEffect : MonoBehaviour {
 	AudioSource windy;
     public float windSpeed;
     public int lifetime;
+    public GameObject wp;
+    public WeatherPlayer wpScript;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		windy = gameObject.GetComponent<AudioSource> ();
-	}
+        wp = GameObject.Find("Player 2");
+        wpScript = wp.GetComponent<WeatherPlayer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -37,7 +41,7 @@ public class WindEffect : MonoBehaviour {
     {
         
         Vector2 windVector = new Vector2(-windSpeed, 0);
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !wpScript.inCheck)
         {
             //other.gameObject.GetComponent<Rigidbody2D>().velocity = (-transform.right * windSpeed);
             other.gameObject.GetComponent<Rigidbody2D>().drag = 1f;
