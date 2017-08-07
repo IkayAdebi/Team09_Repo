@@ -27,6 +27,7 @@ public class Flame_Effect : MonoBehaviour {
             flame.SetActive(true);
             flame.GetComponent<HeatDeath>().doIDie = true;
             flame.transform.position = gameObject.transform.position;
+
             isGrounded = false;
             gameObject.GetComponent<Rigidbody2D>().IsAwake();
             gameObject.SetActive(false);
