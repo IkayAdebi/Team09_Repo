@@ -24,6 +24,8 @@ public class Player : MonoBehaviour {
     public bool isJumping;
     private bool isJumpCanceled;
 	    private Rigidbody2D _rb;
+	public ParticleSystem drop;
+	public Sprite normalPlayer;
 
     Animator anim;
     #endregion
@@ -55,6 +57,7 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		drop.Stop ();
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
@@ -203,7 +206,8 @@ public class Player : MonoBehaviour {
     {
         // Death and Respawn Logic
         yield return new WaitForSeconds(.5f);
-        if (currentCheckpoint == null)
+		gameObject.GetComponent<SpriteRenderer> ().sprite = normalPlayer;
+		if (currentCheckpoint == null)
         {
             transform.position = new Vector3(-10, 1, 0);
         }

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BorderLeft.cs" />
+     <Compile Include="Assets\Freezee.cs" />
      <Compile Include="Assets\Freezer.cs" />
      <Compile Include="Assets\Indicate.cs" />
      <Compile Include="Assets\Pond.cs" />
@@ -68,6 +69,8 @@
      <Compile Include="Assets\Scripts\Win.cs" />
      <Compile Include="Assets\Scripts\WindEffect.cs" />
      <Compile Include="Assets\Scripts\panning.cs" />
+     <Compile Include="Assets\Spikes.cs" />
+     <Compile Include="Assets\iconFloat.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
