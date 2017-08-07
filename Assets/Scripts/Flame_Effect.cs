@@ -15,8 +15,12 @@ public class Flame_Effect : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+
+    //    gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.up * 20);
+
         gameObject.transform.rotation.z.Equals(0);
         gameObject.GetComponent<Rigidbody2D>().AddForce(-transform.up * 20);
+
         if (isGrounded)
         {
            

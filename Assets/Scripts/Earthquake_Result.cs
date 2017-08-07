@@ -91,7 +91,7 @@ public class Earthquake_Result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!wpScript.inCheck)
+        if (wpScript.inCheck)
         {
             gameObject.transform.position = new Vector3(-100, 100, 100);
             gameObject.SetActive(false);

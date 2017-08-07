@@ -6,9 +6,11 @@ public class Checkpoint : MonoBehaviour {
     public GameObject player;
     public GameObject wp;
     private Player script;
+
 	// Use this for initialization
 	void Start () {
         script = player.GetComponent<Player>();
+
         wp = GameObject.Find("Player 2");
     }
 	
@@ -23,6 +25,7 @@ public class Checkpoint : MonoBehaviour {
         {
             script.currentCheckpoint = gameObject;
         }
+
         wp.GetComponent<WeatherPlayer>().inCheck = true;
     }
 

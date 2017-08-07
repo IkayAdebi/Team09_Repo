@@ -23,8 +23,7 @@ public class Player : MonoBehaviour {
     public static bool isGrounded;
     public bool isJumping;
     private bool isJumpCanceled;
-
-    private Rigidbody2D _rb;
+	    private Rigidbody2D _rb;
 
     Animator anim;
     #endregion
@@ -110,13 +109,11 @@ public class Player : MonoBehaviour {
                         transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
                 else
                 {
-                    if (Input.GetAxis(P1_HORIZONTAL_AXIS) > 0.2f || Input.GetAxis(P1_HORIZONTAL_AXIS) < -0.2f)
-                    {
-                        if (!flip)
-                            transform.position = new Vector3(transform.position.x + Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
-                        else
-                            transform.position = new Vector3(transform.position.x - Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
-                    }
+                    if (!flip)
+                        transform.position = new Vector3(transform.position.x + Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                    else
+                        transform.position = new Vector3(transform.position.x - Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+
                 }
             }
 

@@ -46,6 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BorderLeft.cs" />
+     <Compile Include="Assets\Freezer.cs" />
+     <Compile Include="Assets\Indicate.cs" />
+     <Compile Include="Assets\Pond.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Dirt.cs" />
@@ -61,9 +65,9 @@
      <Compile Include="Assets\Scripts\Shake.cs" />
      <Compile Include="Assets\Scripts\SnowEffect.cs" />
      <Compile Include="Assets\Scripts\WeatherPlayer.cs" />
+     <Compile Include="Assets\Scripts\Win.cs" />
      <Compile Include="Assets\Scripts\WindEffect.cs" />
-     <Compile Include="Assets\Win.cs" />
-     <Compile Include="Assets\panning.cs" />
+     <Compile Include="Assets\Scripts\panning.cs" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/team09_RepoIII_TheThirdOne/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
