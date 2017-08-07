@@ -13,11 +13,11 @@ public class Earthquake_Result : MonoBehaviour {
     public GameObject player;
     private Player playerScript;
     public int changeRate;
-    private bool dontDiePlease = false;
+    private bool dontDiePlease = true;
     public GameObject wp;
     public WeatherPlayer wpScript;
 
-    IEnumerator startQuake()
+    /*IEnumerator startQuake()
     {
         playerScript.stopJump = true;
         playerScript.isJumping = false;
@@ -58,21 +58,25 @@ public class Earthquake_Result : MonoBehaviour {
         playerScript._jumpStrength = player.GetComponent<Player>()._jumpStrength * changeRate;
         gameObject.transform.position = new Vector3(-100, 100, 100);
         gameObject.SetActive(false);
-        dontDiePlease = false;*/
-    }
+        dontDiePlease = false;
+      }*/
 
     IEnumerator toDeath()
     {
+        dontDiePlease = true;
         yield return new WaitForSeconds(deathTime);
         gameObject.transform.position = new Vector3(-100, 100, 100);
-        gameObject.SetActive(false);
         dontDiePlease = false;
+        playerScript.stopJump = false;
+        playerScript.flip = false;
+        gameObject.SetActive(false);
+        Player.isGrounded = true;
     }
 
     // Use this for initialization
     void Start()
     {
-        StartCoroutine("toDeath");
+        dontDiePlease = false;
         playerScript = player.GetComponent<Player>();
         if (snow_effect.activeSelf)
         {
@@ -91,26 +95,53 @@ public class Earthquake_Result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!wpScript.inCheck)
+        playerScript.moveRestrict = false;
+        if (!dontDiePlease)
+        StartCoroutine("toDeath");
+        if (wpScript.inCheck)
         {
             gameObject.transform.position = new Vector3(-100, 100, 100);
             gameObject.SetActive(false);
             dontDiePlease = false;
-        }
-        if (enable && dontDiePlease)
-        {
-            StopCoroutine("toDeath");
-            enable = false;
-            StartCoroutine("startQuake");
+            playerScript.stopJump = false;
+            playerScript.flip = false;
+            Player.isGrounded = true;
         }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
             if (other.gameObject.tag == "Player")
             {
-                dontDiePlease = true;
-            }
+            playerScript.stopJump = true;
+            StartCoroutine("waitFlip", true);
+            Player.isGrounded = true;
+        }
+           
 
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && gameObject.activeSelf)
+        {
+            playerScript.stopJump = false;
+            StartCoroutine("waitFlip", false);
+            Player.isGrounded = true;
+        }
+
+    }
+
+    IEnumerator waitFlip(bool a)
+    {
+        yield return new WaitForSeconds(.2f);
+        if (a)
+        {
+            playerScript.flip = true;
+        }
+        else
+        {
+            playerScript.flip = false;
+        }
     }
 }
