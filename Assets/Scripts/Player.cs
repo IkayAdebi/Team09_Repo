@@ -22,11 +22,10 @@ public class Player : MonoBehaviour {
     
     public static bool isGrounded;
     public bool isJumping;
-    private bool isJumpCanceled;
-	    private Rigidbody2D _rb;
+	private Rigidbody2D _rb;
 	public ParticleSystem drop;
 	public Sprite normalPlayer;
-
+	public GameObject corpse;
     Animator anim;
     #endregion
 
@@ -51,6 +50,7 @@ public class Player : MonoBehaviour {
     #region Miscellaneous Info
     public bool hasSeed;
     public GameObject currentCheckpoint;
+    private FloorController jsC;
     #endregion
 
     #endregion
@@ -74,6 +74,10 @@ public class Player : MonoBehaviour {
 			counterText.text = ""+(counter + 1);
             yield return new WaitForSeconds(1);
         }
+        /*  jsC.move(0, 0);
+          jsC.move(1, 0);
+          jsC.move(2, 0);
+          jsC.move(3, 0);*/
         SceneManager.LoadScene("GameOver");
     }
 
@@ -127,16 +131,11 @@ public class Player : MonoBehaviour {
                     isJumping = true;
                 }
             }
-            if ((Input.GetButtonUp("Jump") || Input.GetAxis(VERTICAL_AXIS) < -0.5f || Input.GetAxis(P1_VERTICAL_AXIS) < -0.6f) && !isGrounded)
-            {
-                isJumpCanceled = true;
-            }
 
             // Allows Player to go down faster
             if (Input.GetAxis(VERTICAL_AXIS) < -0.5f && !isGrounded)
             {
                 _rb.AddForce(-Vector2.up * 60);
-                isJumpCanceled = true;
             }
 
             // Sets a max speed for player's acceleration;
@@ -157,16 +156,7 @@ public class Player : MonoBehaviour {
             isJumping = false;
         } 
 
-        // If jump button is held for shorter time, player jumps at a shorter height
-        if (isJumpCanceled)
-        {
-            if (_rb.velocity.y > _jumpStrength /2)
-            {
-                _rb.velocity = new Vector2(_rb.velocity.x, _jumpStrength / 2);
-            }
-            isJumpCanceled = false;
-        }
-
+  
 
     }
 
@@ -205,6 +195,9 @@ public class Player : MonoBehaviour {
     {
         // Death and Respawn Logic
         yield return new WaitForSeconds(.5f);
+		gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+		corpse = GameObject.FindGameObjectWithTag ("corpse");
+		GameObject.Destroy (corpse);
 		gameObject.GetComponent<SpriteRenderer> ().sprite = normalPlayer;
 		if (currentCheckpoint == null)
         {
