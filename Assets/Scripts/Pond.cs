@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pond : MonoBehaviour {
-	public ParticleSystem rainy;
+	//public ParticleSystem rainy;
 	public Sprite frozen;
 	public Sprite thawed;
 	public Sprite playernorm;
@@ -18,7 +18,7 @@ public class Pond : MonoBehaviour {
 	void Start () {
 
 		player = GameObject.Find("Player 1");
-		rainy.Stop ();
+		//rainy.Stop ();
 		isFrozen = false;
 	}
 
@@ -48,7 +48,7 @@ public class Pond : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer> ().sprite = frozen;
 		player.GetComponent<Player> ().moveRestrict = true;
 
-		rainy.Stop ();
+	//	rainy.Stop ();
 		player.GetComponent<SpriteRenderer> ().sprite = playerfroze;
 		yield return new WaitForSeconds(freezeTime);
 	
@@ -56,7 +56,7 @@ public class Pond : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer> ().sprite = thawed;
 		player.GetComponent<Player> ().moveRestrict = false;
 
-		rainy.Play ();
+//		rainy.Play ();
 
 
 	}
@@ -105,7 +105,7 @@ public class Pond : MonoBehaviour {
 **/
 		//if (collision.gameObject.name == "Player 1") {
 			//	else 
-		rainy.Stop ();
+//		rainy.Stop ();
 
 		//	}
 
