@@ -52,6 +52,7 @@ public class WeatherPlayer : MonoBehaviour
     public float fireCooldown;
 
     public bool inCheck;
+    private FloorController jsC;
 
     IEnumerator countUpWind()
     {
@@ -101,6 +102,11 @@ public class WeatherPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+      /*  jsC.move(0, 10);
+        jsC.move(1, 10);
+        jsC.move(2, 10);
+        jsC.move(3, 10);*/
+
         wind.SetActive(false);
         weatherChoose.Add("Wind");
         weatherChoose.Add("Snow");
