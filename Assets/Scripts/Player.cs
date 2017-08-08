@@ -57,7 +57,6 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		drop.Stop ();
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
@@ -72,7 +71,7 @@ public class Player : MonoBehaviour {
         for(int c = 0; c < lifetime; c++)
         {
             counter--;
-            counterText.text = "Seconds left: " + (counter + 1);
+			counterText.text = ""+(counter + 1);
             yield return new WaitForSeconds(1);
         }
         SceneManager.LoadScene("GameOver");
