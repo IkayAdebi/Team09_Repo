@@ -11,6 +11,7 @@
     <RootNamespace></RootNamespace>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectGuid>{71777EA5-DD8E-6187-6545-969B7A16CABD}</ProjectGuid>
 =======
     <ProjectGuid>{420D7D5F-53F8-2A3C-3AD4-B304BBD78EE0}</ProjectGuid>
@@ -18,6 +19,9 @@
 =======
     <ProjectGuid>{71777EA5-DD8E-6187-6545-969B7A16CABD}</ProjectGuid>
 >>>>>>> timer
+=======
+    <ProjectGuid>{71777EA5-DD8E-6187-6545-969B7A16CABD}</ProjectGuid>
+>>>>>>> ba92f187f1f6f8125550d5fc5ac09e034ea12aeb
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -105,17 +109,21 @@
  <Reference Include="nunit.framework">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
 <<<<<<< HEAD
+<<<<<<< HEAD
  </Reference>
  <Reference Include="UnityEngine.Timeline">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
 =======
 >>>>>>> timer
+=======
+>>>>>>> ba92f187f1f6f8125550d5fc5ac09e034ea12aeb
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+<<<<<<< HEAD
 <<<<<<< HEAD
  </Reference>
  <Reference Include="Phidget21.NET">
@@ -125,17 +133,23 @@
  <HintPath>C:/team09_RepoIII_TheThirdOne/Assets/Plugins/Phidget21.NET.dll</HintPath>
 >>>>>>> db5a56a1a9882ca19419c5608c5765c640ed734c
 =======
+=======
+>>>>>>> ba92f187f1f6f8125550d5fc5ac09e034ea12aeb
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Phidget21.NET">
  <HintPath>F:/CMU Summer/Aere/Assets/Plugins/Phidget21.NET.dll</HintPath>
+<<<<<<< HEAD
 >>>>>>> timer
+=======
+>>>>>>> ba92f187f1f6f8125550d5fc5ac09e034ea12aeb
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <Project>{0164E732-9AD1-2C33-9079-507375D0FE9F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
@@ -147,6 +161,9 @@
 =======
       <Project>{0164E732-9AD1-2C33-9079-507375D0FE9F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
 >>>>>>> timer
+=======
+      <Project>{0164E732-9AD1-2C33-9079-507375D0FE9F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+>>>>>>> ba92f187f1f6f8125550d5fc5ac09e034ea12aeb
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
