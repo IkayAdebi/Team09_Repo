@@ -55,10 +55,10 @@ public class SnowEffect : MonoBehaviour {
         {
             yield return new WaitForSeconds(1);
         }
-        jsC.move(0, 10);
-        jsC.move(1, 10);
-        jsC.move(2, 10);
-        jsC.move(3, 10);
+    //    jsC.move(0, 10);
+      //  jsC.move(1, 10);
+       // jsC.move(2, 10);
+       // jsC.move(3, 10);
         playerScript.moveSpeed = initialState;
         gameObject.SetActive(false);
         transform.position = new Vector3(-100, -100, -100);
