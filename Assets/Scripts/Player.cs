@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 	    private Rigidbody2D _rb;
 	public ParticleSystem drop;
 	public Sprite normalPlayer;
-
+	public GameObject corpse;
     Animator anim;
     #endregion
 
@@ -208,6 +208,9 @@ public class Player : MonoBehaviour {
     {
         // Death and Respawn Logic
         yield return new WaitForSeconds(.5f);
+		gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+		corpse = GameObject.FindGameObjectWithTag ("corpse");
+		GameObject.Destroy (corpse);
 		gameObject.GetComponent<SpriteRenderer> ().sprite = normalPlayer;
 		if (currentCheckpoint == null)
         {

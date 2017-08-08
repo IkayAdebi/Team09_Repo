@@ -8,12 +8,12 @@ public class WindEffect : MonoBehaviour {
     public int lifetime;
     public GameObject wp;
     public WeatherPlayer wpScript;
-    private FloorController jsC;
+//    private FloorController jsC;
 
     // Use this for initialization
     void Start () {
-        jsC.move(0, 0);
-        jsC.move(1, 0);
+    //    jsC.move(0, 0);
+  //      jsC.move(1, 0);
 		windy = gameObject.GetComponent<AudioSource> ();
         wp = GameObject.Find("Player 2");
         wpScript = wp.GetComponent<WeatherPlayer>();
@@ -34,7 +34,7 @@ public class WindEffect : MonoBehaviour {
             {
                 gameObject.SetActive(false);
                 transform.position = new Vector3 (-100, -100, -100);
-                jsC.disable();
+//                jsC.disable();
             }
 
             yield return new WaitForSeconds(1);
@@ -45,7 +45,7 @@ public class WindEffect : MonoBehaviour {
     {
         
         Vector2 windVector = new Vector2(-windSpeed, 0);
-        if (other.gameObject.tag == "Player" && !wpScript.inCheck)
+        if (other.gameObject.tag == "Player")
         {
             //other.gameObject.GetComponent<Rigidbody2D>().velocity = (-transform.right * windSpeed);
             other.gameObject.GetComponent<Rigidbody2D>().drag = 1f;
