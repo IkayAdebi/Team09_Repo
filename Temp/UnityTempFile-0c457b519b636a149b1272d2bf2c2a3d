@@ -1,19 +1,13 @@
 -debug
 -target:library
--nowarn:0169
--langversion:4
--out:Temp/Assembly-CSharp-firstpass.dll
--unsafe
--r:F:/Unity/Editor/Data/Managed/UnityEngine.dll
--r:F:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
--r:F:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
--r:F:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll
--r:F:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll
--r:F:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll
--r:F:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll
--r:F:/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll
--r:Assets/Plugins/Phidget21.NET.dll
--r:F:/Unity/Editor/Data/Managed/UnityEditor.dll
+-i:UnityEngine
+-i:System.Collections
+-base:UnityEngine.MonoBehaviour
+-nowarn:BCW0016
+-nowarn:BCW0003
+-method:Main
+-out:Temp/Assembly-UnityScript-firstpass.dll
+-x-type-inference-rule-attribute:UnityEngineInternal.TypeInferenceRuleAttribute
 -define:UNITY_5_3_OR_NEWER
 -define:UNITY_5_4_OR_NEWER
 -define:UNITY_5_5_OR_NEWER
@@ -86,12 +80,17 @@
 -define:UNITY_EDITOR_WIN
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
-Assets/Plugins/ArgumentHandler.cs
-Assets/Plugins/CameraFrustumGizmo.cs
-Assets/Plugins/WindowHandler.cs
--r:F:\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll
--r:F:\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll
--r:F:\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll
--r:F:\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.Lang.dll
--r:F:\Unity\Editor\Data\Mono\lib\mono\unity\Boo.Lang.dll
--sdk:unity
+-define:ENABLE_VSTU
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll"
+-r:Assets/Plugins/Phidget21.NET.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-i:UnityEditor
+Assets/Plugins/DrawSphereGizmo.js
+"Assets/Standard Assets/FloorController.js"
