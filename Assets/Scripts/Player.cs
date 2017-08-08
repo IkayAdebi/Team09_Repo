@@ -50,6 +50,7 @@ public class Player : MonoBehaviour {
     #region Miscellaneous Info
     public bool hasSeed;
     public GameObject currentCheckpoint;
+    private FloorController jsC;
     #endregion
 
     #endregion
@@ -73,6 +74,10 @@ public class Player : MonoBehaviour {
 			counterText.text = ""+(counter + 1);
             yield return new WaitForSeconds(1);
         }
+        /*  jsC.move(0, 0);
+          jsC.move(1, 0);
+          jsC.move(2, 0);
+          jsC.move(3, 0);*/
         SceneManager.LoadScene("GameOver");
     }
 
@@ -123,7 +128,6 @@ public class Player : MonoBehaviour {
             {
                 if (!stopJump && !moveRestrict)
                 {
-                    Debug.Log("Confirm");
                     isJumping = true;
                 }
             }
@@ -161,7 +165,6 @@ public class Player : MonoBehaviour {
         // Collision Detection for Falling
 		if (collision.gameObject.tag == "Win")
 		{
-			Debug.Log ("Hello");
 			SceneManager.LoadScene ("YouWin");
 		
 		}

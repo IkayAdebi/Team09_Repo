@@ -22,6 +22,7 @@ public class Earthquake_Effect : MonoBehaviour {
         {
 
             quake.SetActive(true);
+            quake.GetComponent<Earthquake_Result>().react = true;
             quake.GetComponent<Earthquake_Result>().enable = true;
             quake.transform.position = gameObject.transform.position;
             isGrounded = false;
@@ -44,7 +45,12 @@ public class Earthquake_Effect : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "DeathBoundary")
+        {
+            gameObject.SetActive(false);
+            transform.position = new Vector3(-100, -100, -100);
+        }
+        else if (collision.gameObject.tag == "Platform")
         {
             isGrounded = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
