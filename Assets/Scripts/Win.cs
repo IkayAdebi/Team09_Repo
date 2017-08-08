@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Win : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    private FloorController jsC;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -16,10 +17,12 @@ public class Win : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D collision)
-	{
-	//	if (collision.gameObject.tag == "Player") {
-			SceneManager.LoadScene ("YouWin");
-	//	}
+    {
+        /*  jsC.move(0, 0);
+          jsC.move(1, 0);
+          jsC.move(2, 0);
+          jsC.move(3, 0);*/
+        SceneManager.LoadScene ("YouWin");
 	}
 
 
