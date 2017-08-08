@@ -68,7 +68,7 @@ public class Earthquake_Result : MonoBehaviour {
         {
             int c = (int) Random.value * 4;
             float i = Random.value * 10;
-            jsC.move(c, i);
+            //jsC.move(c, i);
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -81,10 +81,10 @@ public class Earthquake_Result : MonoBehaviour {
         dontDiePlease = false;
         playerScript.stopJump = false;
         playerScript.flip = false;
-        jsC.move(0, 10);
-        jsC.move(1, 10);
-        jsC.move(2, 10);
-        jsC.move(3, 10);
+       // jsC.move(0, 10);
+        //jsC.move(1, 10);
+        //jsC.move(2, 10);
+        //jsC.move(3, 10);
         gameObject.SetActive(false);
         Player.isGrounded = true;
     }
@@ -122,10 +122,10 @@ public class Earthquake_Result : MonoBehaviour {
             playerScript.stopJump = false;
             playerScript.flip = false;
             Player.isGrounded = true;
-            jsC.move(0, 10);
-            jsC.move(1, 10);
-            jsC.move(2, 10);
-            jsC.move(3, 10);
+            //jsC.move(0, 10);
+            //jsC.move(1, 10);
+            //jsC.move(2, 10);
+           // jsC.move(3, 10);
         }
     }
 
@@ -150,10 +150,10 @@ public class Earthquake_Result : MonoBehaviour {
             StartCoroutine("waitFlip", false);
             Player.isGrounded = true;
             StopCoroutine("quakeShake");
-            jsC.move(0, 10);
-            jsC.move(1, 10);
-            jsC.move(2, 10);
-            jsC.move(3, 10);
+         //   jsC.move(0, 10);
+         //   jsC.move(1, 10);
+         //   jsC.move(2, 10);
+         //   jsC.move(3, 10);
         }
 
     }
