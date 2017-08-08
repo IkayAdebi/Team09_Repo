@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class LoadScene : MonoBehaviour {
 
-	public void LoadStage(){
-		SceneManager.LoadScene(0);
+	public void LoadStage(int a){
+		SceneManager.LoadScene(a);
 	}
 
 }
