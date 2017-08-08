@@ -60,6 +60,7 @@ C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Users\Jake\Desktop\New Repository\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\Jake\Desktop\New Repository\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Jake\Desktop\New Repository\obj\Debug\Assembly-CSharp-firstpass.pdb
+<<<<<<< HEAD
 F:\CMU Summer\Aere\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
 F:\CMU Summer\Aere\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 F:\CMU Summer\Aere\Temp\bin\Debug\nunit.framework.dll
@@ -92,3 +93,6 @@ F:\CMU Summer\Aere\Temp\bin\Debug\UnityEngine.VR.xml
 F:\CMU Summer\Aere\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 F:\CMU Summer\Aere\obj\Debug\Assembly-CSharp-firstpass.dll
 F:\CMU Summer\Aere\obj\Debug\Assembly-CSharp-firstpass.pdb
+=======
+C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Phidget21.NET.dll
+>>>>>>> 0e567045b9b06fd5d37d6f7aec4ab7ddfb12f0e3
