@@ -6,11 +6,13 @@ public class Earthquake_Effect : MonoBehaviour {
 
     private bool isGrounded;
     public GameObject quake;
+	AudioSource earthquake;
 
     // Use this for initialization
     void Start()
     {
         isGrounded = false;
+		GetComponent<AudioSource> ().Play ();
     }
 
     // Update is called once per frame

@@ -19,6 +19,7 @@ public class RockSmasher : MonoBehaviour {
 		 if (collision.gameObject.name == "Rock") {
 			GameObject rock = collision.gameObject;
 			rock.GetComponent<rock> ().isFalling = true;
+			GetComponent<AudioSource> ().Play ();
 
 		}
 
