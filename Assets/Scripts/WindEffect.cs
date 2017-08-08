@@ -31,8 +31,8 @@ public class WindEffect : MonoBehaviour {
                 gameObject.SetActive(false);
                 transform.position = new Vector3 (-100, -100, -100);
 
-                jsC.move(0, 10);
-                jsC.move(1, 10);
+                //jsC.move(0, 10);
+               // jsC.move(1, 10);
             }
 
             yield return new WaitForSeconds(1);
@@ -57,8 +57,8 @@ public class WindEffect : MonoBehaviour {
 
         if (other.gameObject.tag == "Player" && !wpScript.inCheck)
         {
-            jsC.move(0, 0);
-            jsC.move(1, 0);
+           // jsC.move(0, 0);
+           // jsC.move(1, 0);
         }
 
     }
@@ -68,8 +68,8 @@ public class WindEffect : MonoBehaviour {
         
         if (other.gameObject.tag == "Player" && !wpScript.inCheck)
         {
-            jsC.move(0, 10);
-            jsC.move(1, 10);
+         //   jsC.move(0, 10);
+            //jsC.move(1, 10);
         }
 
     }

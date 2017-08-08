@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
         for(int c = 0; c < lifetime; c++)
         {
             counter--;
-            counterText.text = "Seconds left: " + (counter + 1);
+			counterText.text = ""+(counter + 1);
             yield return new WaitForSeconds(1);
         }
         SceneManager.LoadScene("GameOver");
@@ -124,7 +124,6 @@ public class Player : MonoBehaviour {
             {
                 if (!stopJump && !moveRestrict)
                 {
-                    Debug.Log("Confirm");
                     isJumping = true;
                 }
             }
@@ -176,7 +175,6 @@ public class Player : MonoBehaviour {
         // Collision Detection for Falling
 		if (collision.gameObject.tag == "Win")
 		{
-			Debug.Log ("Hello");
 			SceneManager.LoadScene ("YouWin");
 		
 		}
