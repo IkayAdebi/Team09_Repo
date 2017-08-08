@@ -11,23 +11,23 @@ public class HeatDeath : MonoBehaviour
     IEnumerator shake()
     {
 
-        jsC.move(2, 9);
-        jsC.move(3, 9);
+    //    jsC.move(2, 9);
+    //    jsC.move(3, 9);
         yield return new WaitForSeconds(0.1f);
-        jsC.move(2, 7);
-        jsC.move(3, 7);
+   //     jsC.move(2, 7);
+   //     jsC.move(3, 7);
         yield return new WaitForSeconds(0.1f);
-        jsC.move(2, 4);
-        jsC.move(3, 4);
+   //     jsC.move(2, 4);
+   //     jsC.move(3, 4);
         yield return new WaitForSeconds(0.1f);
-        jsC.move(2, 0);
-        jsC.move(3, 0);
+     //   jsC.move(2, 0);
+    //    jsC.move(3, 0);
         yield return new WaitForSeconds(0.1f);
-        jsC.move(2, 5);
-        jsC.move(3, 5);
+      //  jsC.move(2, 5);
+     //   jsC.move(3, 5);
         yield return new WaitForSeconds(0.1f);
-        jsC.move(2, 10);
-        jsC.move(3, 10);
+     //   jsC.move(2, 10);
+      //  jsC.move(3, 10);
     }
 
     void OnTriggerEnter2D(Collider2D other)
