@@ -283,39 +283,59 @@ public class WeatherPlayer : MonoBehaviour
 
     public void movementCode()
     {
-       /* if (transform.position.x - cam.transform.position.x > camWidth)
-        {
-            transform.position = new Vector3(camWidth + cam.transform.position.x, transform.position.y, 0);
-        }
-        else if (transform.position.x - cam.transform.position.x < camWidth)
-        {
-            transform.position = new Vector3(0 + cam.transform.position.x, transform.position.y, 0);
-        }
-        if (transform.position.y - cam.transform.position.y > camHeight)
-        {
-            transform.position = new Vector3(transform.position.x, camHeight + cam.transform.position.y, 0);
-        }
-        else if (transform.position.y - cam.transform.position.y < camHeight)
-        {
-            transform.position = new Vector3(transform.position.x, 0 + cam.transform.position.y, 0);
-        }*/
+        /* if (transform.position.x - cam.transform.position.x > camWidth)
+         {
+             transform.position = new Vector3(camWidth + cam.transform.position.x, transform.position.y, 0);
+         }
+         else if (transform.position.x - cam.transform.position.x < camWidth)
+         {
+             transform.position = new Vector3(0 + cam.transform.position.x, transform.position.y, 0);
+         }
+         if (transform.position.y - cam.transform.position.y > camHeight)
+         {
+             transform.position = new Vector3(transform.position.x, camHeight + cam.transform.position.y, 0);
+         }
+         else if (transform.position.y - cam.transform.position.y < camHeight)
+         {
+             transform.position = new Vector3(transform.position.x, 0 + cam.transform.position.y, 0);
+         }*/
 
-        if(currentVDirection[vDirectionIndex] == "Up")
+        if (currentVDirection[vDirectionIndex] == "Up")
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + (_moveSpeed), 0);
         }
-        else if(currentVDirection[vDirectionIndex] == "Down")
-           
+        else if (currentVDirection[vDirectionIndex] == "Down")
+
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - (_moveSpeed), 0);
         }
-        if(currentHDirection[hDirectionIndex] == "Left")
+        if (currentHDirection[hDirectionIndex] == "Left")
         {
             transform.position = new Vector3(transform.position.x - (_moveSpeed), transform.position.y, 0);
         }
-        else if(currentHDirection[hDirectionIndex] == "Right")
+        else if (currentHDirection[hDirectionIndex] == "Right")
         {
             transform.position = new Vector3(transform.position.x + (_moveSpeed), transform.position.y, 0);
+        }
+
+        // Check Map boundaries
+        if (transform.position.x > 83)
+        {
+            transform.position = new Vector3(83, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x < -83)
+        {
+            transform.position = new Vector3(-83, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.y > 13.5f)
+        {
+            transform.position = new Vector3(transform.position.x, 13.5f, transform.position.z);
+        }
+
+        if (transform.position.y < -13.5f)
+        {
+            transform.position = new Vector3(transform.position.x, -13.5f, transform.position.z);
         }
     }
 
