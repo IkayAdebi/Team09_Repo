@@ -81,10 +81,10 @@ public class Earthquake_Result : MonoBehaviour {
         dontDiePlease = false;
         playerScript.stopJump = false;
         playerScript.flip = false;
-        jsC.move(0, 10);
-        jsC.move(1, 10);
-        jsC.move(2, 10);
-        jsC.move(3, 10);
+//        jsC.move(0, 10);
+  //      jsC.move(1, 10);
+    //    jsC.move(2, 10);
+      //  jsC.move(3, 10);
         gameObject.SetActive(false);
         Player.isGrounded = true;
     }
