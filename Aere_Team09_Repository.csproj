@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Freezee.cs" />
+    <Compile Include="Assets\RockSmasher.cs" />
     <Compile Include="Assets\Scripts\BorderLeft.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
