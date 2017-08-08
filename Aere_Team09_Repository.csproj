@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\Indicate.cs" />
     <Compile Include="Assets\Scripts\LightningScript.cs" />
     <Compile Include="Assets\Scripts\LightningStrike.cs" />
+    <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Pond.cs" />
     <Compile Include="Assets\Scripts\Seed.cs" />

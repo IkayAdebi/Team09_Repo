@@ -154,6 +154,7 @@ public class Player : MonoBehaviour {
         {
             _rb.velocity = new Vector2(_rb.velocity.x, _jumpStrength);
             isJumping = false;
+            isGrounded = true;
         } 
 
   
@@ -194,6 +195,7 @@ public class Player : MonoBehaviour {
     IEnumerator OnDeath()
     {
         // Death and Respawn Logic
+        isGrounded = true;
         yield return new WaitForSeconds(.5f);
 		gameObject.GetComponent<SpriteRenderer> ().enabled = true;
 		corpse = GameObject.FindGameObjectWithTag ("corpse");
