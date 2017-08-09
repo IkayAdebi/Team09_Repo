@@ -13,7 +13,10 @@ public class SnowEffect : MonoBehaviour {
     public WeatherPlayer wpScript;
     public int lifetime;
     public bool doIDie;
-    private FloorController jsC; 
+    private FloorController jsC;
+
+    public GameObject particle;
+    public GameObject freeze;
 
     // Use this for initialization
     void Start () {
@@ -60,8 +63,12 @@ public class SnowEffect : MonoBehaviour {
      //   jsC.move(2, 10);
      //   jsC.move(3, 10);
         playerScript.moveSpeed = initialState;
-        gameObject.SetActive(false);
         transform.position = new Vector3(-100, -100, -100);
+        freeze.transform.position = transform.position;
+        freeze.SetActive(false);
+        particle.transform.position = transform.position;
+        particle.SetActive(false);
+        gameObject.SetActive(false);
     }
 		
     void OnTriggerStay2D(Collider2D other)
