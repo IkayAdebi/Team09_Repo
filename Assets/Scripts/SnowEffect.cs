@@ -13,7 +13,11 @@ public class SnowEffect : MonoBehaviour {
     public WeatherPlayer wpScript;
     public int lifetime;
     public bool doIDie;
+<<<<<<< HEAD
     //private FloorController jsC;
+=======
+    private FloorController jsC; 
+>>>>>>> 2139d4b6a9851fd42c7e703066ee30f07763e473
 
     // Use this for initialization
     void Start () {

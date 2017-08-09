@@ -46,12 +46,12 @@ public class WindEffect : MonoBehaviour {
                 transform.position = new Vector3 (-100, -100, -100);
                 //jsC.move(0, 10);
                // jsC.move(1, 10);
-//                jsC.disable();
-
-
+                //jsC.disable();
+                //jsC.move(0, 10);
+               // jsC.move(1, 10);
              //   jsC.move(0, 10);
                // jsC.move(1, 10);
-               
+
             }
 
             yield return new WaitForSeconds(1);

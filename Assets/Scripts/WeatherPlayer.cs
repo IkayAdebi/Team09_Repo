@@ -52,7 +52,7 @@ public class WeatherPlayer : MonoBehaviour
     public float fireCooldown;
 
     public bool inCheck;
-    private FloorController jsC;
+    private FloorController jsC;   
 
     IEnumerator countUpWind()
     {
