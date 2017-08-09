@@ -6,10 +6,12 @@ public class Flame_Effect : MonoBehaviour {
     
     private bool isGrounded;
     public GameObject flame;
+	AudioSource fireball;
 
     // Use this for initialization
     void Start() {
         isGrounded = false;
+		fireball = gameObject.GetComponent<AudioSource> ();
     }
 	
 	// Update is called once per frame
@@ -48,7 +50,7 @@ public class Flame_Effect : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Platform")
         {
             isGrounded = true;
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

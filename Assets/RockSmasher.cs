@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RockSmasher : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 		
@@ -20,7 +19,6 @@ public class RockSmasher : MonoBehaviour {
 			GameObject rock = collision.gameObject;
 			rock.GetComponent<rock> ().isFalling = true;
 			GetComponent<AudioSource> ().Play ();
-
 		}
 
 }

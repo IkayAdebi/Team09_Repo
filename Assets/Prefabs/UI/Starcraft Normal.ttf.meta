@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 98ef79f034e04924c9cbc61da9ae6a3f
+timeCreated: 1502222330
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Starcraft
+  fontNames:
+  - Starcraft
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,15 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Freezer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SnowEffect.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="168" Column="4" />
+      <File FileName="Assets\Scripts\Player.cs" Line="199" Column="35" />
       <File FileName="Assets\Scripts\Indicate.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\panning.cs" Line="22" Column="2" />
-      <File FileName="Assets\Scripts\SnowEffect.cs" Line="20" Column="40" />
-      <File FileName="Assets\Scripts\Earthquake_Effect.cs" Line="15" Column="40" />
-      <File FileName="Assets\Scripts\Earthquake_Result.cs" Line="5" Column="49" />
-      <File FileName="Assets\RockSmasher.cs" Line="22" Column="41" />
-      <File FileName="Assets\Scripts\Freezer.cs" Line="21" Column="18" />
+      <File FileName="Assets\Scripts\panning.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SnowEffect.cs" Line="20" Column="3" />
+      <File FileName="Assets\Scripts\Freezer.cs" Line="24" Column="32" />
+      <File FileName="Assets\Scripts\Flame_Effect.cs" Line="14" Column="53" />
+      <File FileName="Assets\Scripts\HeatDeath.cs" Line="38" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
