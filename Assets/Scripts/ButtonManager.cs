@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    private string currentStage = "MainScene";
+
+// Use this for initialization
+void Start () {
 		
 	}
 	
@@ -17,6 +19,36 @@ public class ButtonManager : MonoBehaviour {
 
     public void restartGame()
     {
+        SceneManager.LoadScene(currentStage);
+    }
+
+    public void stage1()
+    {
+        currentStage = "MainScene";
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void stage2()
+    {
+        currentStage = "Stage2";
+        SceneManager.LoadScene("Stage2");
+
+    }
+
+    public void stage3()
+    {
+        currentStage = "Stage3";
+        SceneManager.LoadScene("Stage3");
+
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("start");
+    }
+
+    public void quitGame()
+    {
+        Application.Quit();
     }
 }
