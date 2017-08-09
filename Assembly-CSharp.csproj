@@ -101,6 +101,18 @@
  <Reference Include="Phidget21.NET">
  <HintPath>C:/Team09_RepoIV/Assets/Plugins/Phidget21.NET.dll</HintPath>
  </Reference>
+ <Reference Include="Facebook.Unity">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.dll</HintPath>
+ </Reference>
+ <Reference Include="Facebook.Unity.Arcade">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Arcade.dll</HintPath>
+ </Reference>
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
+ <Reference Include="FacebookNamedPipeClient">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/FacebookNamedPipeClient.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

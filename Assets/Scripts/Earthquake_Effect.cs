@@ -11,6 +11,7 @@ public class Earthquake_Effect : MonoBehaviour {
     void Start()
     {
         isGrounded = false;
+
     }
 
     // Update is called once per frame

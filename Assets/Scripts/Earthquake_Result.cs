@@ -60,6 +60,7 @@ public class Earthquake_Result : MonoBehaviour {
         enable = true;
         wp = GameObject.Find("Player 2");
         wpScript = wp.GetComponent<WeatherPlayer>();
+		GetComponent<AudioSource> ().Play ();
     }
 
     // Update is called once per frame

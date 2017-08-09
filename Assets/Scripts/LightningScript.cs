@@ -10,7 +10,7 @@ public class LightningScript : MonoBehaviour {
 		// Use this for initialization
 		void Start () {
 		
-		lightning = gameObject.GetComponent<AudioSource> ();
+		GetComponent<AudioSource> ().Play ();
 
 		//StartCoroutine ("timeTilDeath");
 		}
@@ -27,7 +27,6 @@ public class LightningScript : MonoBehaviour {
 		{
 		yield return new WaitForSeconds(1);
 	
-		lightning.Play ();
 		if (isReady == true) {
 			Instantiate (bolt, transform.position - new Vector3(0, 12, 0), Quaternion.identity);
 			isReady = false;	

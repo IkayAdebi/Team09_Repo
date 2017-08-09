@@ -18,6 +18,7 @@ public class rock : MonoBehaviour {
 	void Update () {
 		if (isFalling == true) {
 			rb.constraints = RigidbodyConstraints2D.None;
+			GetComponent<AudioSource> ().Play ();
 		}
 			
 
