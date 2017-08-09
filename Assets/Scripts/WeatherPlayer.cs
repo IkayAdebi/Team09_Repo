@@ -232,10 +232,10 @@ public class WeatherPlayer : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Y) || Input.GetAxis(P2_VERTICAL_AXIS) > 0) { 
+        if (Input.GetKey(KeyCode.Y) || Input.GetAxis(P2_VERTICAL_AXIS) < 0) { 
             vDirectionIndex = 0;
         }
-        else if (Input.GetKey(KeyCode.H) || Input.GetAxis(P2_VERTICAL_AXIS) < 0)
+        else if (Input.GetKey(KeyCode.H) || Input.GetAxis(P2_VERTICAL_AXIS) > 0)
         {
             vDirectionIndex = 1;
         }

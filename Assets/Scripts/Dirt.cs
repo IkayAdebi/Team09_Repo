@@ -6,7 +6,7 @@ public class Dirt : MonoBehaviour {
 	public Sprite seeded;
 	public GameObject vine;
 	private GameObject p1;
-	private bool hasSeed;
+	private int hasSeed;
 	// Use this for initialization
 	void Start () {
 
@@ -19,15 +19,15 @@ public class Dirt : MonoBehaviour {
 	hasSeed = p1.GetComponent<Player>().hasSeed;
 	}
 
-	private void OnTriggerStay2D(Collider2D collision)
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.tag == "Player" && hasSeed == true )
+		if (collision.gameObject.tag == "Player" && hasSeed > 0 )
 		{
 			GetComponent<AudioSource> ().Play ();
 			Vector3 vinepos = transform.position - new Vector3(12, -4, 0);
 			gameObject.GetComponent<SpriteRenderer> ().sprite = seeded;
 			Instantiate (vine, vinepos, Quaternion.Euler(0,0,-13));
-			p1.GetComponent<Player> ().hasSeed = false;
+			p1.GetComponent<Player> ().hasSeed --;
 		}
 	}
 

@@ -49,7 +49,7 @@ public class Player : MonoBehaviour {
     #endregion
 
     #region Miscellaneous Info
-    public bool hasSeed;
+    public int hasSeed;
     public GameObject currentCheckpoint;
     private FloorController jsC;
     #endregion
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour {
         _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
         StartCoroutine("countToDeath");
-        hasSeed = false;
+        hasSeed = 0;
 	}
 
     IEnumerator countToDeath()
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour {
             }
 
             // Allows Player to go down faster
-            if (Input.GetAxis(VERTICAL_AXIS) < -0.5f && !isGrounded)
+            if (Input.GetAxis(P1_VERTICAL_AXIS) > 0.5f && !isGrounded)
             {
                 _rb.AddForce(-Vector2.up * 60);
             }
@@ -179,7 +179,7 @@ public class Player : MonoBehaviour {
 
 		else if (collision.gameObject.tag == "Collectible")
 		{
-			hasSeed = true;
+			hasSeed++;
 		}
         
 

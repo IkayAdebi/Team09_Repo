@@ -8,7 +8,7 @@ public class HeatDeath : MonoBehaviour
 	public bool doIDie;
     private FloorController jsC;
 	AudioSource flamewall;
-
+	public Sprite burnt;
     IEnumerator shake()
     {
 
@@ -35,20 +35,26 @@ public class HeatDeath : MonoBehaviour
     {
             if (other.gameObject.tag == "Player")
             {
+			
+			gameObject.GetComponent<Animator> ().SetBool ("isActive", true);
+			other.gameObject.GetComponent<SpriteRenderer> ().sprite = burnt;
 			GetComponent<AudioSource> ().Play ();
-            }
+		}
 
     }
 
     IEnumerator deathCounter()
 	{
 		yield return new WaitForSeconds(lifetime);
+		gameObject.GetComponent<Animator> ().SetBool ("isActive", false);
 		gameObject.transform.position = new Vector3(-100, 100, 100);
 		gameObject.SetActive(false);
 	}
 
 	// Use this for initialization
 	void Start () {
+		gameObject.GetComponent<Animator> ().SetBool ("isActive", false);
+
 		doIDie = true;
 	}
 

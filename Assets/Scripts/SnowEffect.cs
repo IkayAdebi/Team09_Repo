@@ -13,7 +13,7 @@ public class SnowEffect : MonoBehaviour {
     public WeatherPlayer wpScript;
     public int lifetime;
     public bool doIDie;
-    private FloorController jsC;
+    //private FloorController jsC;
 
     // Use this for initialization
     void Start () {
@@ -32,7 +32,7 @@ public class SnowEffect : MonoBehaviour {
         }
     }
 
-    IEnumerator jostleSnow() {
+    /**IEnumerator jostleSnow() {
         while (1 == 1)
         {
            // jsC.move(0, 8);
@@ -47,7 +47,7 @@ public class SnowEffect : MonoBehaviour {
             yield return new WaitForSeconds(0.9f);
         }
 
-    }
+    } **/
 
     IEnumerator timeTilDeath()
     {
@@ -72,7 +72,7 @@ public class SnowEffect : MonoBehaviour {
         else {
             if (other.gameObject.tag == "Player" && !wpScript.inCheck)
             {
-                StartCoroutine("jostleSnow");
+           //     StartCoroutine("jostleSnow");
                 playerScript.moveSpeed = initialState / divisionFactor;
             }
         }
@@ -88,7 +88,7 @@ public class SnowEffect : MonoBehaviour {
         {
             if (other.gameObject.tag == "Player")
             {
-                StopCoroutine("jostleSnow");
+         //       StopCoroutine("jostleSnow");
             //    jsC.move(0, 10);
              //   jsC.move(1, 10);
             //    jsC.move(2, 10);

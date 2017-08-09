@@ -96,3 +96,7 @@ F:\CMU Summer\Aere\obj\Debug\Assembly-CSharp-firstpass.pdb
 =======
 C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Phidget21.NET.dll
 >>>>>>> 0e567045b9b06fd5d37d6f7aec4ab7ddfb12f0e3
+C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Facebook.Unity.Arcade.dll
+C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Facebook.Unity.dll
+C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Facebook.Unity.Settings.dll
+C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\FacebookNamedPipeClient.dll
