@@ -37,6 +37,7 @@ public class Player : MonoBehaviour {
     public static int counter;
     public int lifetime;
     public Text counterText;
+	AudioSource death;
     #endregion
 
     #region earthquakeEffects
@@ -172,6 +173,7 @@ public class Player : MonoBehaviour {
 		else if (collision.gameObject.tag == "DeathBoundary")
         {
             isAlive = false;
+			GetComponent<AudioSource> ().Play ();
             StartCoroutine(OnDeath());        
         }
 
@@ -195,8 +197,8 @@ public class Player : MonoBehaviour {
     IEnumerator OnDeath()
     {
         // Death and Respawn Logic
+        yield return new WaitForSeconds(1.7f);
         isGrounded = true;
-        yield return new WaitForSeconds(.5f);
 		gameObject.GetComponent<SpriteRenderer> ().enabled = true;
 		corpse = GameObject.FindGameObjectWithTag ("corpse");
 		GameObject.Destroy (corpse);

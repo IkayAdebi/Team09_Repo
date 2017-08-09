@@ -1,5 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SnowEffect.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Player.cs" Line="199" Column="35" />
+      <File FileName="Assets\Scripts\Indicate.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\panning.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SnowEffect.cs" Line="20" Column="3" />
+      <File FileName="Assets\Scripts\Freezer.cs" Line="24" Column="32" />
+      <File FileName="Assets\Scripts\Flame_Effect.cs" Line="14" Column="53" />
+      <File FileName="Assets\Scripts\HeatDeath.cs" Line="38" Column="4" />
+=======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LoadScene.cs">
     <Files>
       <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
@@ -7,6 +18,7 @@
       <File FileName="Assets\Scripts\LightningScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\panning.cs" Line="22" Column="2" />
       <File FileName="Assets\Scripts\LoadScene.cs" Line="7" Column="1" />
+>>>>>>> 6f0cd5928df62c7a0749d3eaa1ce1db552bc378b
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

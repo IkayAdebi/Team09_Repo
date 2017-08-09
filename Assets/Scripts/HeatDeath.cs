@@ -7,6 +7,7 @@ public class HeatDeath : MonoBehaviour
 	public int lifetime;
 	public bool doIDie;
     private FloorController jsC;
+	AudioSource flamewall;
 
     IEnumerator shake()
     {
@@ -34,6 +35,7 @@ public class HeatDeath : MonoBehaviour
     {
             if (other.gameObject.tag == "Player")
             {
+			GetComponent<AudioSource> ().Play ();
             }
 
     }
@@ -56,6 +58,7 @@ public class HeatDeath : MonoBehaviour
 		{
 			doIDie = false;
 			StartCoroutine("deathCounter");
+
 		}
 	}
 }

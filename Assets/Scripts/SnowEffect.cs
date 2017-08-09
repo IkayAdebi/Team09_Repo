@@ -17,9 +17,9 @@ public class SnowEffect : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        playerScript = playerOne.GetComponent < Player >();
+		GetComponent<AudioSource> ().Play ();
+		playerScript = playerOne.GetComponent < Player >();
         initialState = playerScript.moveSpeed;
-		snowy = gameObject.GetComponent<AudioSource> ();
         wp = GameObject.Find("Player 2");
         wpScript = wp.GetComponent<WeatherPlayer>();
     }
@@ -63,7 +63,7 @@ public class SnowEffect : MonoBehaviour {
         gameObject.SetActive(false);
         transform.position = new Vector3(-100, -100, -100);
     }
-
+		
     void OnTriggerStay2D(Collider2D other)
     {
         if (playerScript.lowerSpeed || playerScript.increaseSpeed)
