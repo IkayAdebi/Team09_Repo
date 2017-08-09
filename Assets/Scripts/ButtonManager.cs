@@ -47,6 +47,16 @@ void Start () {
         SceneManager.LoadScene("start");
     }
 
+    public void howTo()
+    {
+        SceneManager.LoadScene("HowTo");
+    }
+
+    public void levelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
     public void quitGame()
     {
         Application.Quit();

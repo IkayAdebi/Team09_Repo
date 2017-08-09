@@ -49,6 +49,9 @@
      <Compile Include="Assets\Plugins\ArgumentHandler.cs" />
      <Compile Include="Assets\Plugins\CameraFrustumGizmo.cs" />
      <Compile Include="Assets\Plugins\WindowHandler.cs" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -72,18 +75,6 @@
  </Reference>
  <Reference Include="Phidget21.NET">
  <HintPath>C:/Team09_RepoIV/Assets/Plugins/Phidget21.NET.dll</HintPath>
- </Reference>
- <Reference Include="Facebook.Unity">
- <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.dll</HintPath>
- </Reference>
- <Reference Include="Facebook.Unity.Arcade">
- <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Arcade.dll</HintPath>
- </Reference>
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
- </Reference>
- <Reference Include="FacebookNamedPipeClient">
- <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/FacebookNamedPipeClient.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
