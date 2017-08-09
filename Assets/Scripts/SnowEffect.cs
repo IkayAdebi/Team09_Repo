@@ -89,10 +89,10 @@ public class SnowEffect : MonoBehaviour {
             if (other.gameObject.tag == "Player")
             {
                 StopCoroutine("jostleSnow");
-                jsC.move(0, 10);
-                jsC.move(1, 10);
-                jsC.move(2, 10);
-                jsC.move(3, 10);
+            //    jsC.move(0, 10);
+             //   jsC.move(1, 10);
+            //    jsC.move(2, 10);
+            //    jsC.move(3, 10);
                 playerScript.moveSpeed = initialState;
             }
         }

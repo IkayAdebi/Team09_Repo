@@ -91,6 +91,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Freezee.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\RockSmasher.cs" />
+>>>>>>> 0a6e245f0403711b08ef5920f7cfbf02466b7e16
     <Compile Include="Assets\Scripts\BorderLeft.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
@@ -104,6 +108,7 @@
     <Compile Include="Assets\Scripts\Indicate.cs" />
     <Compile Include="Assets\Scripts\LightningScript.cs" />
     <Compile Include="Assets\Scripts\LightningStrike.cs" />
+    <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Pond.cs" />
     <Compile Include="Assets\Scripts\Seed.cs" />
