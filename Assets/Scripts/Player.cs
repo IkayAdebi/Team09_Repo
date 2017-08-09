@@ -37,7 +37,6 @@ public class Player : MonoBehaviour {
     public static int counter;
     public int lifetime;
     public Text counterText;
-	AudioSource death;
     #endregion
 
     #region earthquakeEffects
@@ -52,6 +51,10 @@ public class Player : MonoBehaviour {
     public bool hasSeed;
     public GameObject currentCheckpoint;
     private FloorController jsC;
+	private AudioSource playeraudio;
+	public AudioClip winsound;
+	public AudioClip dyingsfx;
+	public AudioClip obtainseed;
     #endregion
 
     #endregion
@@ -65,6 +68,10 @@ public class Player : MonoBehaviour {
         anim = GetComponent<Animator>();
         StartCoroutine("countToDeath");
         hasSeed = false;
+
+	}
+	void Awake () {
+		playeraudio = GetComponent<AudioSource> ();
 	}
 
     IEnumerator countToDeath()
@@ -167,18 +174,23 @@ public class Player : MonoBehaviour {
         // Collision Detection for Falling
 		if (collision.gameObject.tag == "Win")
 		{
+			playeraudio.clip = winsound;
+			playeraudio.Play ();
 			SceneManager.LoadScene ("YouWin");
 		
 		}
 		else if (collision.gameObject.tag == "DeathBoundary")
         {
             isAlive = false;
-			GetComponent<AudioSource> ().Play ();
+			playeraudio.clip = dyingsfx;
+			playeraudio.Play ();
             StartCoroutine(OnDeath());        
         }
 
 		else if (collision.gameObject.tag == "Collectible")
 		{
+			playeraudio.clip = obtainseed;
+			playeraudio.Play ();
 			hasSeed = true;
 		}
         
