@@ -17,7 +17,7 @@ public class WindEffect : MonoBehaviour {
 
         //    jsC.move(0, 0);
         //      jsC.move(1, 0);
-        windDirection = 1;
+        windDirection = 2;
 
 		windy = gameObject.GetComponent<AudioSource> ();
         wp = GameObject.Find("Player 2");
