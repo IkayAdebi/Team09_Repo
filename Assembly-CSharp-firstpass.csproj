@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0164E732-9AD1-2C33-9079-507375D0FE9F}</ProjectGuid>
+    <ProjectGuid>{196934E3-D171-B728-FE1B-48AAE9ED0657}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -49,9 +49,6 @@
      <Compile Include="Assets\Plugins\ArgumentHandler.cs" />
      <Compile Include="Assets\Plugins\CameraFrustumGizmo.cs" />
      <Compile Include="Assets\Plugins\WindowHandler.cs" />
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Yumi/Documents/NHSGA Round Two/Aere/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -74,16 +71,19 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Phidget21.NET">
- <HintPath>C:/Users/Yumi/Documents/NHSGA Round Two/Aere/Assets/Plugins/Phidget21.NET.dll</HintPath>
+ <HintPath>C:/Team09_RepoIV/Assets/Plugins/Phidget21.NET.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <Reference Include="Facebook.Unity">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <Reference Include="Facebook.Unity.Arcade">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Arcade.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Common">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
+ <Reference Include="FacebookNamedPipeClient">
+ <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/FacebookNamedPipeClient.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
