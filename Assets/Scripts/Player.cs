@@ -176,7 +176,7 @@ public class Player : MonoBehaviour {
 		{
 			playeraudio.clip = winsound;
 			playeraudio.Play ();
-			SceneManager.LoadScene ("YouWin");
+			StartCoroutine ("Wait");
 		
 		}
 		else if (collision.gameObject.tag == "DeathBoundary")
@@ -226,5 +226,11 @@ public class Player : MonoBehaviour {
         isAlive = true;
         _rb.velocity = new Vector2(0, 0);
     }
+	IEnumerator Wait()
+	{
+		//scene delay
+		yield return new WaitForSeconds (2f);
+		SceneManager.LoadScene ("YouWin");
+	}
 
 }
