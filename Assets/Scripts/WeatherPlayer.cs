@@ -342,5 +342,11 @@ public class WeatherPlayer : MonoBehaviour
     public void refreshSprite()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = useSprite;
+
+        // Flip Sprite
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
     }
 }
