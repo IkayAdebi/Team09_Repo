@@ -27,6 +27,7 @@ public class Player : MonoBehaviour {
 	public Sprite normalPlayer;
 	public GameObject corpse;
     Animator anim;
+	public AudioClip jump;
     #endregion
 
     #region Health Info
@@ -163,6 +164,8 @@ public class Player : MonoBehaviour {
             _rb.velocity = new Vector2(_rb.velocity.x, _jumpStrength);
             isJumping = false;
             isGrounded = true;
+			playeraudio.clip = jump;
+			playeraudio.Play ();
         } 
 
   
