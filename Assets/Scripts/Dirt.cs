@@ -7,6 +7,7 @@ public class Dirt : MonoBehaviour {
 	public GameObject vine;
 	private GameObject p1;
 	private int hasSeed;
+	public int rotation;
 	// Use this for initialization
 	void Start () {
 
@@ -26,7 +27,7 @@ public class Dirt : MonoBehaviour {
 			GetComponent<AudioSource> ().Play ();
 			Vector3 vinepos = transform.position - new Vector3(12, -4, 0);
 			gameObject.GetComponent<SpriteRenderer> ().sprite = seeded;
-			Instantiate (vine, vinepos, Quaternion.Euler(0,0,-13));
+			Instantiate (vine, vinepos, Quaternion.Euler(0,0, rotation));
 			p1.GetComponent<Player> ().hasSeed --;
 		}
 	}

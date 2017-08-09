@@ -67,15 +67,15 @@ public class Player : MonoBehaviour {
         _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
         StartCoroutine("countToDeath");
-<<<<<<< HEAD
+
         hasSeed = 0;
-=======
-        hasSeed = false;
+
+      
 
 	}
 	void Awake () {
 		playeraudio = GetComponent<AudioSource> ();
->>>>>>> 2139d4b6a9851fd42c7e703066ee30f07763e473
+
 	}
 
     IEnumerator countToDeath()
@@ -193,13 +193,13 @@ public class Player : MonoBehaviour {
 
 		else if (collision.gameObject.tag == "Collectible")
 		{
-<<<<<<< HEAD
+
 			hasSeed++;
-=======
+
 			playeraudio.clip = obtainseed;
 			playeraudio.Play ();
-			hasSeed = true;
->>>>>>> 2139d4b6a9851fd42c7e703066ee30f07763e473
+
+
 		}
         
 

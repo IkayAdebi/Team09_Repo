@@ -6,11 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-<<<<<<< HEAD
     <ProjectGuid>{6C49F98A-C514-5F11-8F13-42135E2EDB19}</ProjectGuid>
-=======
-    <ProjectGuid>{4118EDAB-EBDD-641C-620A-8B9B7A35EFF2}</ProjectGuid>
->>>>>>> 2139d4b6a9851fd42c7e703066ee30f07763e473
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -78,16 +74,8 @@
      <Compile Include="Assets\Spikes.cs" />
      <Compile Include="Assets\iconFloat.cs" />
      <Compile Include="Assets\rock.cs" />
-<<<<<<< HEAD
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Jake/Desktop/New Repository/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
-=======
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Team09_RepoIV/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
->>>>>>> 2139d4b6a9851fd42c7e703066ee30f07763e473
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -111,22 +99,14 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Phidget21.NET">
-<<<<<<< HEAD
  <HintPath>C:/Users/Jake/Desktop/New Repository/Assets/Plugins/Phidget21.NET.dll</HintPath>
-=======
- <HintPath>C:/Team09_RepoIV/Assets/Plugins/Phidget21.NET.dll</HintPath>
->>>>>>> 2139d4b6a9851fd42c7e703066ee30f07763e473
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-<<<<<<< HEAD
       <Project>{44C811BD-F260-AA1A-E056-DA1B69FA6D56}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
       <Project>{455230E0-27EB-3B26-3356-8D6BFD062C9B}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
-=======
-      <Project>{196934E3-D171-B728-FE1B-48AAE9ED0657}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
->>>>>>> 2139d4b6a9851fd42c7e703066ee30f07763e473
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
