@@ -141,7 +141,7 @@ public class WeatherPlayer : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.L) || Input.GetAxis(P2_ABILITY_CHANGE) > 0.4f) && !isTriggerDown)
         {
             weatherIndex++;
-            if (weatherIndex == 5)
+            if (weatherIndex == 3)
             {
                 weatherIndex = 0;
             }

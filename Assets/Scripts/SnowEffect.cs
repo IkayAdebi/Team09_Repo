@@ -13,19 +13,27 @@ public class SnowEffect : MonoBehaviour {
     public WeatherPlayer wpScript;
     public int lifetime;
     public bool doIDie;
+<<<<<<< HEAD
 
     //private FloorController jsC;
 
     private FloorController jsC; 
+=======
+    private FloorController jsC;
+
+    public GameObject particle;
+    public GameObject freeze;
+>>>>>>> 1d905d1f8bdccc92b3a2c9fcd4f2f88430a5ef40
 
 
     // Use this for initialization
     void Start () {
-		GetComponent<AudioSource> ().Play ();
+		
 		playerScript = playerOne.GetComponent < Player >();
         initialState = playerScript.moveSpeed;
         wp = GameObject.Find("Player 2");
         wpScript = wp.GetComponent<WeatherPlayer>();
+		snowy = gameObject.GetComponent<AudioSource> ();
     }
 	
 	// Update is called once per frame
@@ -64,8 +72,12 @@ public class SnowEffect : MonoBehaviour {
      //   jsC.move(2, 10);
      //   jsC.move(3, 10);
         playerScript.moveSpeed = initialState;
-        gameObject.SetActive(false);
         transform.position = new Vector3(-100, -100, -100);
+        freeze.transform.position = transform.position;
+        freeze.SetActive(false);
+        particle.transform.position = transform.position;
+        particle.SetActive(false);
+        gameObject.SetActive(false);
     }
 		
     void OnTriggerStay2D(Collider2D other)
