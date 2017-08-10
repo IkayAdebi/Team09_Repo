@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{196934E3-D171-B728-FE1B-48AAE9ED0657}</ProjectGuid>
+    <ProjectGuid>{8BA1D223-3026-75E7-217C-F2E683EFCDA5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -50,7 +50,7 @@
      <Compile Include="Assets\Plugins\CameraFrustumGizmo.cs" />
      <Compile Include="Assets\Plugins\WindowHandler.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Team09_RepoIV/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/team09_Repo_ItsTheFithOne/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -74,7 +74,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Phidget21.NET">
- <HintPath>C:/Team09_RepoIV/Assets/Plugins/Phidget21.NET.dll</HintPath>
+ <HintPath>C:/team09_Repo_ItsTheFithOne/Assets/Plugins/Phidget21.NET.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

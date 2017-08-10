@@ -49,30 +49,35 @@ public class Player : MonoBehaviour {
     #endregion
 
     #region Miscellaneous Info
-    public bool hasSeed;
+    public int hasSeed;
     public GameObject currentCheckpoint;
     private FloorController jsC;
 	private AudioSource playeraudio;
 	public AudioClip winsound;
 	public AudioClip dyingsfx;
 	public AudioClip obtainseed;
+    public GameObject camera2D;
+    public GameObject cameraCave;
     #endregion
 
     #endregion
 
     // Use this for initialization
     void Start () {
+       /* camera2D.SetActive(false);
+        cameraCave.SetActive(true);*/
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
         _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
         StartCoroutine("countToDeath");
-        hasSeed = false;
+        hasSeed = 0;
 
 	}
 	void Awake () {
 		playeraudio = GetComponent<AudioSource> ();
+
 	}
 
     IEnumerator countToDeath()
@@ -142,7 +147,7 @@ public class Player : MonoBehaviour {
             }
 
             // Allows Player to go down faster
-            if (Input.GetAxis(VERTICAL_AXIS) < -0.5f && !isGrounded)
+            if (Input.GetAxis(P1_VERTICAL_AXIS) > 0.5f && !isGrounded)
             {
                 _rb.AddForce(-Vector2.up * 60);
             }
@@ -192,9 +197,12 @@ public class Player : MonoBehaviour {
 
 		else if (collision.gameObject.tag == "Collectible")
 		{
+
+			hasSeed++;
+
 			playeraudio.clip = obtainseed;
 			playeraudio.Play ();
-			hasSeed = true;
+			hasSeed++;
 		}
         
 

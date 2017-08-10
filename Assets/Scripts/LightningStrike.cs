@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LightningStrike : MonoBehaviour {
+	public Sprite burnt;
 
-    private FloorController jsC;
+    //private FloorController jsC;
 	// Use this for initialization
 	void Start () {
 				StartCoroutine("Fizzle");
@@ -23,6 +24,16 @@ public class LightningStrike : MonoBehaviour {
 
 	}
     
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.name == "Player 1") {
+			collision.gameObject.GetComponent<SpriteRenderer> ().sprite = burnt;
+		}
+
+	}
+
+
+
 	IEnumerator Crash()
     {
         //jsC.move(0, 5);

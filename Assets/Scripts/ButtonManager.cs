@@ -31,14 +31,14 @@ void Start () {
     public void stage2()
     {
         currentStage = "Stage2";
-        SceneManager.LoadScene("Stage2");
+        SceneManager.LoadScene("MainScene - Copy");
 
     }
 
     public void stage3()
     {
         currentStage = "Stage3";
-        SceneManager.LoadScene("Stage3");
+        SceneManager.LoadScene("MainScene - Copy - Copy");
 
     }
 
