@@ -55,12 +55,16 @@ public class Player : MonoBehaviour {
 	public AudioClip winsound;
 	public AudioClip dyingsfx;
 	public AudioClip obtainseed;
+    public GameObject camera2D;
+    public GameObject cameraCave;
     #endregion
 
     #endregion
 
     // Use this for initialization
     void Start () {
+       /* camera2D.SetActive(false);
+        cameraCave.SetActive(true);*/
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
