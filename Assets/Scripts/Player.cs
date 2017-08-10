@@ -56,22 +56,23 @@ public class Player : MonoBehaviour {
 	public AudioClip winsound;
 	public AudioClip dyingsfx;
 	public AudioClip obtainseed;
+    public GameObject camera2D;
+    public GameObject cameraCave;
     #endregion
 
     #endregion
 
     // Use this for initialization
     void Start () {
+       /* camera2D.SetActive(false);
+        cameraCave.SetActive(true);*/
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
         _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
         StartCoroutine("countToDeath");
-
         hasSeed = 0;
-
-      
 
 	}
 	void Awake () {
@@ -201,8 +202,7 @@ public class Player : MonoBehaviour {
 
 			playeraudio.clip = obtainseed;
 			playeraudio.Play ();
-
-
+			hasSeed++;
 		}
         
 
