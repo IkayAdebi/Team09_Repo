@@ -41,6 +41,7 @@ public class SnowEffect : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.P))
         {
             StartCoroutine("timeTilDeath");
+            particle.SetActive(true);
         }
     }
 
@@ -88,7 +89,7 @@ public class SnowEffect : MonoBehaviour {
         else {
             if (other.gameObject.tag == "Player" && !wpScript.inCheck)
             {
-           //     StartCoroutine("jostleSnow");
+                //     StartCoroutine("jostleSnow");
                 playerScript.moveSpeed = initialState / divisionFactor;
             }
         }
@@ -104,11 +105,11 @@ public class SnowEffect : MonoBehaviour {
         {
             if (other.gameObject.tag == "Player")
             {
-         //       StopCoroutine("jostleSnow");
-            //    jsC.move(0, 10);
-             //   jsC.move(1, 10);
-            //    jsC.move(2, 10);
-            //    jsC.move(3, 10);
+                //       StopCoroutine("jostleSnow");
+                //    jsC.move(0, 10);
+                //   jsC.move(1, 10);
+                //    jsC.move(2, 10);
+                //    jsC.move(3, 10);
                 playerScript.moveSpeed = initialState;
             }
         }

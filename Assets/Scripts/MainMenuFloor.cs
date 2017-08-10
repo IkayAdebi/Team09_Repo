@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenuFloor : MonoBehaviour {
 
-    private FloorController jsC;
+  //  private FloorController jsC;
     public static bool dontpush;
 
 	// Use this for initialization
@@ -17,10 +17,10 @@ public class MainMenuFloor : MonoBehaviour {
         if (!dontpush)
         {
             dontpush = true;
-            jsC.move(0, 0);
-            jsC.move(1, 0);
-            jsC.move(2, 0);
-            jsC.move(3, 0);
+         //   jsC.move(0, 0);
+         //   jsC.move(1, 0);
+        //    jsC.move(2, 0);
+         //   jsC.move(3, 0);
         }
 
 	}

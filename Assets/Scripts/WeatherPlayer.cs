@@ -347,9 +347,17 @@ public class WeatherPlayer : MonoBehaviour
 		gameObject.GetComponent<SpriteRenderer>().sprite = useSprite;
 
 		// Flip Sprite
-		if (Input.GetKeyDown(KeyCode.O))
-		{
-			transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-		}
-	}
+           /* if (wind.GetComponent<WindEffect>().windDirection == 1 && Input.GetKeyDown(KeyCode.O))
+            {
+                Debug.Log("Hi");
+                wind.GetComponent<WindEffect>().windDirection = 2;
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
+        else  if (wind.GetComponent<WindEffect>().windDirection == 2 && Input.GetKeyDown(KeyCode.O))
+            {
+                Debug.Log("Bye");
+                wind.GetComponent<WindEffect>().windDirection = 1;
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }*/
+    }
 }

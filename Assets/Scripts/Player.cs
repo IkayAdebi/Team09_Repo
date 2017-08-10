@@ -19,15 +19,15 @@ public class Player : MonoBehaviour {
     public float moveSpeed = .15f;
     public float _jumpStrength = 20f; // old value: 350
     private const float MAX_FALL_SPEED = -25f;
-    
+
     public static bool isGrounded;
     public bool isJumping;
-	private Rigidbody2D _rb;
-	public ParticleSystem drop;
-	public Sprite normalPlayer;
-	public GameObject corpse;
+    private Rigidbody2D _rb;
+    public ParticleSystem drop;
+    public Sprite normalPlayer;
+    public GameObject corpse;
     Animator anim;
-	public AudioClip jump;
+    public AudioClip jump;
     #endregion
 
     #region Health Info
@@ -52,10 +52,10 @@ public class Player : MonoBehaviour {
     public int hasSeed;
     public GameObject currentCheckpoint;
     private FloorController jsC;
-	private AudioSource playeraudio;
-	public AudioClip winsound;
-	public AudioClip dyingsfx;
-	public AudioClip obtainseed;
+    private AudioSource playeraudio;
+    public AudioClip winsound;
+    public AudioClip dyingsfx;
+    public AudioClip obtainseed;
     public GameObject camera2D;
     public GameObject cameraCave;
     public static bool pause;
@@ -64,10 +64,10 @@ public class Player : MonoBehaviour {
     #endregion
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         pause = false;
-       /* camera2D.SetActive(false);
-        cameraCave.SetActive(true);*/
+        /* camera2D.SetActive(false);
+         cameraCave.SetActive(true);*/
         counter = lifetime;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
@@ -76,11 +76,11 @@ public class Player : MonoBehaviour {
         StartCoroutine("countToDeath");
         hasSeed = 0;
 
-	}
-	void Awake () {
-		playeraudio = GetComponent<AudioSource> ();
+    }
+    void Awake() {
+        playeraudio = GetComponent<AudioSource>();
 
-	}
+    }
 
     IEnumerator countToDeath()
     {
@@ -110,75 +110,76 @@ public class Player : MonoBehaviour {
         if (isAlive)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
+              {
+                  if (!pause)
+                      pause = true;
+                  else
+                      pause = false;
+              }
+             if (!pause)
             {
-                if (!pause)
-                    pause = true;
-                else
-                    pause = false;
+            // Walking animation
+            if ((Input.GetAxis(HORIZONTAL_AXIS) != 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) != 0) && !moveRestrict)
+            {
+                // anim.SetBool("isWalking", true);
+
+                // Flip Character based off of movement
+                if (Input.GetAxis(HORIZONTAL_AXIS) > 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) > 0.2f)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+                else if (Input.GetAxis(HORIZONTAL_AXIS) < 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) < -0.2f)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
             }
-            if (!pause)
+            else
             {
-                // Walking animation
-                if ((Input.GetAxis(HORIZONTAL_AXIS) != 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) != 0) && !moveRestrict)
-                {
-                    anim.SetBool("isWalking", true);
+                anim.SetBool("isWalking", false);
+            }
 
-                    // Flip Character based off of movement
-                    if (Input.GetAxis(HORIZONTAL_AXIS) > 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) > 0.2f)
-                    {
-                        transform.localScale = new Vector3(1, 1, 1);
-                    }
-                    else if (Input.GetAxis(HORIZONTAL_AXIS) < 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) < -0.2f)
-                    {
-                        transform.localScale = new Vector3(-1, 1, 1);
-                    }
-                }
+            // Move character left and right
+            if (!moveRestrict)
+            {
+                if (Input.GetAxis(P1_HORIZONTAL_AXIS) == 0)
+                    if (!flip)
+                        transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                    else
+                        transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
                 else
                 {
-                    anim.SetBool("isWalking", false);
-                }
-
-                // Move character left and right
-                if (!moveRestrict)
-                {
-                    if (Input.GetAxis(P1_HORIZONTAL_AXIS) == 0)
-                        if (!flip)
-                            transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
-                        else
-                            transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                    if (!flip)
+                        transform.position = new Vector3(transform.position.x + Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
                     else
-                    {
-                        if (!flip)
-                            transform.position = new Vector3(transform.position.x + Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
-                        else
-                            transform.position = new Vector3(transform.position.x - Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                        transform.position = new Vector3(transform.position.x - Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
 
-                    }
                 }
+            }
 
-                // Sets Jumping flags to true based off of player 1's input
-                if (Input.GetButtonDown("Jump") && isGrounded)
+            // Sets Jumping flags to true based off of player 1's input
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                if (!stopJump && !moveRestrict)
                 {
-                    if (!stopJump && !moveRestrict)
-                    {
-                        isJumping = true;
-                    }
+                    isJumping = true;
                 }
+            }
 
-                // Allows Player to go down faster
-                if (Input.GetAxis(P1_VERTICAL_AXIS) > 0.5f && !isGrounded)
-                {
-                    _rb.AddForce(-Vector2.up * 60);
-                }
+            // Allows Player to go down faster
+            if (Input.GetAxis(P1_VERTICAL_AXIS) > 0.5f && !isGrounded)
+            {
+                _rb.AddForce(-Vector2.up * 60);
+            }
 
-                // Sets a max speed for player's acceleration;
-                if (_rb.velocity.y < MAX_FALL_SPEED)
-                {
-                    _rb.velocity = new Vector2(_rb.velocity.x, MAX_FALL_SPEED);
-                }
+            // Sets a max speed for player's acceleration;
+            if (_rb.velocity.y < MAX_FALL_SPEED)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, MAX_FALL_SPEED);
             }
         }
     }
+}
+    
 
     private void FixedUpdate()
     {
@@ -243,18 +244,20 @@ public class Player : MonoBehaviour {
         yield return new WaitForSeconds(1.7f);
         isGrounded = true;
 		gameObject.GetComponent<SpriteRenderer> ().enabled = true;
-		corpse = GameObject.FindGameObjectWithTag ("corpse");
+	corpse = GameObject.FindGameObjectWithTag ("corpse");
 		GameObject.Destroy (corpse);
 		gameObject.GetComponent<SpriteRenderer> ().sprite = normalPlayer;
-		if (currentCheckpoint == null)
-        {
-            transform.position = new Vector3(-10, 1, 0);
-        }
-        else
-        {
-            transform.position = currentCheckpoint.transform.position;
-        }
-        isAlive = true;
+        /**	if (currentCheckpoint == null)
+            {
+                transform.position = new Vector3(-10, 1, 0);
+            }
+            else
+            {
+                transform.position = currentCheckpoint.transform.position;
+            } **/
+        transform.position = new Vector3(-10, 1, 0);
+    
+    isAlive = true;
         _rb.velocity = new Vector2(0, 0);
     }
 	IEnumerator Wait()

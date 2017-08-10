@@ -100,3 +100,36 @@ C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Facebook.Unity.Arcade.dll
 C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Facebook.Unity.dll
 C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\Facebook.Unity.Settings.dll
 C:\Users\Jake\Desktop\New Repository\Temp\bin\Debug\FacebookNamedPipeClient.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Facebook.Unity.Settings.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\nunit.framework.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Phidget21.NET.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEditor.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.HoloLens.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.TestRunner.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.UI.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.VR.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Mono.Cecil.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Unity.DataContract.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Unity.CecilTools.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEditor.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.UI.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.TestRunner.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\nunit.framework.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.Analytics.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.HoloLens.xml
+C:\team09_Repo_ItsTheFithOne\Temp\bin\Debug\UnityEngine.VR.xml
+C:\team09_Repo_ItsTheFithOne\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
+C:\team09_Repo_ItsTheFithOne\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\team09_Repo_ItsTheFithOne\obj\Debug\Assembly-CSharp-firstpass.pdb

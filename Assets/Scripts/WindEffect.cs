@@ -8,12 +8,15 @@ public class WindEffect : MonoBehaviour {
     public int lifetime;
     public GameObject wp;
     public WeatherPlayer wpScript;
-   private FloorController jsC;
+    private FloorController jsC;
+    private Vector2 windVector;
 
-    private int windDirection;
+    public int windDirection;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        windVector = new Vector2();
 
         //    jsC.move(0, 0);
         //      jsC.move(1, 0);
@@ -25,15 +28,22 @@ public class WindEffect : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        StartCoroutine("timeTilDeath");
-        if (Input.GetKeyDown(KeyCode.O) && windDirection == 1)
+	void Update ()
+    {
+
+        if (windDirection == 1)
         {
-            windDirection = 2;
-        } else if (Input.GetKeyDown(KeyCode.O) && windDirection == 2)
-        {
-            windDirection = 1;
+            Debug.Log(1);
+            windVector = new Vector2(windSpeed, 0);
+            gameObject.GetComponent<BoxCollider2D>().offset.Set(2.5f, 0);
         }
+        else
+        {
+            Debug.Log(2);
+            windVector = new Vector2(-windSpeed, 0);
+            gameObject.GetComponent<BoxCollider2D>().offset.Set(-2.5f, 0);
+        }
+        StartCoroutine("timeTilDeath");
     }
 
     IEnumerator timeTilDeath()
@@ -61,23 +71,19 @@ public class WindEffect : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other)
     {
 
-        Vector2 windVector = new Vector2();
 
-        if (windDirection == 1)
-        {
-            windVector = new Vector2(windSpeed, 0);
-        } else
-        {
-            windVector = new Vector2(-windSpeed, 0);
-        }
-
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && other.gameObject.name != "Ground")
         {
             //other.gameObject.GetComponent<Rigidbody2D>().velocity = (-transform.right * windSpeed);
+            if (other.gameObject.name != "Ground")
+            {
+                other.gameObject.GetComponent<Rigidbody2D>().drag = 1f;
+            }
 
-            other.gameObject.GetComponent<Rigidbody2D>().drag = 1f;
-
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(windVector);
+            if (other.gameObject.name != "Ground")
+            {
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(windVector);
+            }
         }
        
 
