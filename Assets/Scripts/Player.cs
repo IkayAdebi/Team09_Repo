@@ -77,6 +77,7 @@ public class Player : MonoBehaviour {
 	}
 	void Awake () {
 		playeraudio = GetComponent<AudioSource> ();
+
 	}
 
     IEnumerator countToDeath()
@@ -146,7 +147,7 @@ public class Player : MonoBehaviour {
             }
 
             // Allows Player to go down faster
-            if (Input.GetAxis(VERTICAL_AXIS) < -0.5f && !isGrounded)
+            if (Input.GetAxis(P1_VERTICAL_AXIS) > 0.5f && !isGrounded)
             {
                 _rb.AddForce(-Vector2.up * 60);
             }
@@ -196,6 +197,9 @@ public class Player : MonoBehaviour {
 
 		else if (collision.gameObject.tag == "Collectible")
 		{
+
+			hasSeed++;
+
 			playeraudio.clip = obtainseed;
 			playeraudio.Play ();
 			hasSeed++;
