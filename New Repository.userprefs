@@ -7,20 +7,20 @@
       <File FileName="Assets\Scripts\Flame_Effect.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\WindEffect.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HeatDeath.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="201" Column="4" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\iconFloat.cs" Line="1" Column="1" />
       <File FileName="Assets\Spikes.cs" Line="1" Column="1" />
       <File FileName="Assets\rock.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Freezer.cs" Line="1" Column="1" />
-      <File FileName="Assets\RockSmasher.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Pond.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Freezer.cs" Line="23" Column="43" />
+      <File FileName="Assets\RockSmasher.cs" Line="18" Column="126" />
+      <File FileName="Assets\Scripts\Pond.cs" Line="74" Column="3" />
       <File FileName="Assets\Scripts\Seed.cs" Line="1" Column="1" />
       <File FileName="c:\Users\Jake\Desktop\New Repository\Assets\Scripts\Dirt.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SnowEffect.cs" Line="18" Column="1" />
+      <File FileName="Assets\Scripts\SnowEffect.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\WeatherPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Freezee.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Earthquake_Result.cs" Line="27" Column="22" />
-      <File FileName="..\..\..\..\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets" Line="3959" Column="34" />
+      <File FileName="Assets\Scripts\Earthquake_Result.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

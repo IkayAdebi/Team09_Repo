@@ -27,7 +27,8 @@ public class Dirt : MonoBehaviour {
 			GetComponent<AudioSource> ().Play ();
 			Vector3 vinepos = transform.position - new Vector3(12, -4, 0);
 			gameObject.GetComponent<SpriteRenderer> ().sprite = seeded;
-			Instantiate (vine, vinepos, Quaternion.Euler(0,0, rotation));
+			//Instantiate (vine, vinepos, Quaternion.Euler(0,0, rotation));
+			vine.SetActive(true);
 			p1.GetComponent<Player> ().hasSeed --;
 		}
 	}

@@ -15,7 +15,7 @@ public class RockSmasher : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collision) {
 		
-		 if (collision.gameObject.name == "Rock") {
+		if (collision.gameObject.name == "Rock" || collision.gameObject.name == "Rock (1)" || collision.gameObject.name == "Rock (2)") {
 			GameObject rock = collision.gameObject;
 			rock.GetComponent<rock> ().isFalling = true;
 			GetComponent<AudioSource> ().Play ();
