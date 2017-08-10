@@ -17,6 +17,11 @@ void Start () {
 		
 	}
 
+    public void unPause()
+    {
+        Player.pause = false;
+    }
+
     public void restartGame()
     {
         SceneManager.LoadScene(currentStage);
@@ -25,6 +30,7 @@ void Start () {
     public void stage1()
     {
         currentStage = "MainScene";
+        MainMenuFloor.dontpush = false;
         SceneManager.LoadScene("MainScene");
     }
 

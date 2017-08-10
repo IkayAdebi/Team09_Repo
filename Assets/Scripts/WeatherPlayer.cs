@@ -130,10 +130,13 @@ public class WeatherPlayer : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		inputChecker();
-		spriteChanger();
-		refreshSprite();
-		movementCode();
+        if (!Player.pause)
+        {
+            inputChecker();
+            spriteChanger();
+            refreshSprite();
+            movementCode();
+        }
 	}
 
 	public void inputChecker()

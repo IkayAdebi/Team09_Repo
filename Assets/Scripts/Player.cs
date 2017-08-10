@@ -58,12 +58,14 @@ public class Player : MonoBehaviour {
 	public AudioClip obtainseed;
     public GameObject camera2D;
     public GameObject cameraCave;
+    public static bool pause;
     #endregion
 
     #endregion
 
     // Use this for initialization
     void Start () {
+        pause = false;
        /* camera2D.SetActive(false);
         cameraCave.SetActive(true);*/
         counter = lifetime;
@@ -82,10 +84,18 @@ public class Player : MonoBehaviour {
 
     IEnumerator countToDeath()
     {
-        for(int c = 0; c < lifetime; c++)
+
+        for (int c = 0; c < lifetime; c++)
         {
-            counter--;
-			counterText.text = ""+(counter + 1);
+            if (!pause)
+            {
+                counter--;
+                counterText.text = "" + (counter + 1);
+            }
+            else
+            {
+                c--;
+            }
             yield return new WaitForSeconds(1);
         }
         /*  jsC.move(0, 0);
@@ -99,63 +109,73 @@ public class Player : MonoBehaviour {
     {
         if (isAlive)
         {
-            // Walking animation
-            if ((Input.GetAxis(HORIZONTAL_AXIS) != 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) != 0) && !moveRestrict)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                anim.SetBool("isWalking", true);
-
-                // Flip Character based off of movement
-                if (Input.GetAxis(HORIZONTAL_AXIS) > 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) > 0.2f)
-                {
-                    transform.localScale = new Vector3(1, 1, 1);
-                }
-                else if (Input.GetAxis(HORIZONTAL_AXIS) < 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) < -0.2f)
-                {
-                    transform.localScale = new Vector3(-1, 1, 1);
-                }
+                if (!pause)
+                    pause = true;
+                else
+                    pause = false;
             }
-            else
+            if (!pause)
             {
-                anim.SetBool("isWalking", false);
-            }
+                // Walking animation
+                if ((Input.GetAxis(HORIZONTAL_AXIS) != 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) != 0) && !moveRestrict)
+                {
+                    anim.SetBool("isWalking", true);
 
-            // Move character left and right
-            if (!moveRestrict)
-            {
-                if (Input.GetAxis(P1_HORIZONTAL_AXIS) == 0)
-                    if (!flip)
-                        transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
-                    else
-                        transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                    // Flip Character based off of movement
+                    if (Input.GetAxis(HORIZONTAL_AXIS) > 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) > 0.2f)
+                    {
+                        transform.localScale = new Vector3(1, 1, 1);
+                    }
+                    else if (Input.GetAxis(HORIZONTAL_AXIS) < 0 || Input.GetAxis(P1_HORIZONTAL_AXIS) < -0.2f)
+                    {
+                        transform.localScale = new Vector3(-1, 1, 1);
+                    }
+                }
                 else
                 {
-                    if (!flip)
-                        transform.position = new Vector3(transform.position.x + Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
-                    else
-                        transform.position = new Vector3(transform.position.x - Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
-
+                    anim.SetBool("isWalking", false);
                 }
-            }
 
-            // Sets Jumping flags to true based off of player 1's input
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                if (!stopJump && !moveRestrict)
+                // Move character left and right
+                if (!moveRestrict)
                 {
-                    isJumping = true;
+                    if (Input.GetAxis(P1_HORIZONTAL_AXIS) == 0)
+                        if (!flip)
+                            transform.position = new Vector3(transform.position.x + Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                        else
+                            transform.position = new Vector3(transform.position.x - Input.GetAxis(HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                    else
+                    {
+                        if (!flip)
+                            transform.position = new Vector3(transform.position.x + Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+                        else
+                            transform.position = new Vector3(transform.position.x - Input.GetAxis(P1_HORIZONTAL_AXIS) * moveSpeed, transform.position.y, 0);
+
+                    }
                 }
-            }
 
-            // Allows Player to go down faster
-            if (Input.GetAxis(P1_VERTICAL_AXIS) > 0.5f && !isGrounded)
-            {
-                _rb.AddForce(-Vector2.up * 60);
-            }
+                // Sets Jumping flags to true based off of player 1's input
+                if (Input.GetButtonDown("Jump") && isGrounded)
+                {
+                    if (!stopJump && !moveRestrict)
+                    {
+                        isJumping = true;
+                    }
+                }
 
-            // Sets a max speed for player's acceleration;
-            if (_rb.velocity.y < MAX_FALL_SPEED)
-            {
-                _rb.velocity = new Vector2(_rb.velocity.x, MAX_FALL_SPEED);
+                // Allows Player to go down faster
+                if (Input.GetAxis(P1_VERTICAL_AXIS) > 0.5f && !isGrounded)
+                {
+                    _rb.AddForce(-Vector2.up * 60);
+                }
+
+                // Sets a max speed for player's acceleration;
+                if (_rb.velocity.y < MAX_FALL_SPEED)
+                {
+                    _rb.velocity = new Vector2(_rb.velocity.x, MAX_FALL_SPEED);
+                }
             }
         }
     }

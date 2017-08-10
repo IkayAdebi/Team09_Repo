@@ -106,6 +106,8 @@ Assets/Scripts/Indicate.cs
 Assets/Scripts/LightningScript.cs
 Assets/Scripts/LightningStrike.cs
 Assets/Scripts/LoadScene.cs
+Assets/Scripts/MainMenuFloor.cs
+Assets/Scripts/PauseOverlay.cs
 Assets/Scripts/Player.cs
 Assets/Scripts/Pond.cs
 Assets/Scripts/Seed.cs
