@@ -49,7 +49,7 @@ public class Player : MonoBehaviour {
     #endregion
 
     #region Miscellaneous Info
-    public bool hasSeed;
+    public int hasSeed;
     public GameObject currentCheckpoint;
     private FloorController jsC;
 	private AudioSource playeraudio;
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour {
         _rb.gravityScale *= 3.5f;
         anim = GetComponent<Animator>();
         StartCoroutine("countToDeath");
-        hasSeed = false;
+        hasSeed = 0;
 
 	}
 	void Awake () {
@@ -198,7 +198,7 @@ public class Player : MonoBehaviour {
 		{
 			playeraudio.clip = obtainseed;
 			playeraudio.Play ();
-			hasSeed = true;
+			hasSeed++;
 		}
         
 

@@ -17,8 +17,8 @@ public class Freezer : MonoBehaviour {
 
 
 
-	void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.name == "Pond") {
+	void OnTriggerStay2D(Collider2D collision) {
+		if (collision.gameObject.name == "Pond" || collision.gameObject.name == "IcyDirt") {
 			GetComponent<AudioSource> ().Play ();
 			GameObject pond = collision.gameObject;
 			pond.GetComponent<Pond> ().isFrozen = true;
