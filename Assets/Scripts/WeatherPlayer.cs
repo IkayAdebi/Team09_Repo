@@ -50,6 +50,10 @@ public class WeatherPlayer : MonoBehaviour
 	public float snowCooldown;
 	public float earthquakeCooldown;
 	public float fireCooldown;
+	public float leftbound;
+	public float rightbound;
+	public float topbound;
+	public float bottombound; 
 
 	public bool inCheck;
 	private FloorController jsC;   
@@ -322,24 +326,25 @@ public class WeatherPlayer : MonoBehaviour
 		}
 
 		// Check Map boundaries
-		if (transform.position.x > 83)
+		if (transform.position.x > rightbound)
 		{
 			transform.position = new Vector3(83, transform.position.y, transform.position.z);
 		}
-		if (transform.position.x < -83)
+		if (transform.position.x < leftbound)
 		{
 			transform.position = new Vector3(-83, transform.position.y, transform.position.z);
 		}
-
-		if (transform.position.y > 13.5f)
+		//83
+		if (transform.position.y > topbound)
 		{
 			transform.position = new Vector3(transform.position.x, 13.5f, transform.position.z);
 		}
 
-		if (transform.position.y < -13.5f)
+		if (transform.position.y < bottombound)
 		{
 			transform.position = new Vector3(transform.position.x, -13.5f, transform.position.z);
 		}
+		//13.5f
 	}
 
 	public void refreshSprite()
