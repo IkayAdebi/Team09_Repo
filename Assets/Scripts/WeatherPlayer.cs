@@ -12,6 +12,8 @@ public class WeatherPlayer : MonoBehaviour
     public const string P2_ABILITY_CHANGE = "RightTrigger";
     public const string P2_ABILITY_USE = "Button_A";
 
+    public const string P2_WIND_SWITCH = "Button_B";
+
     private bool isTriggerDown = false;
 
     private float _moveSpeed = .2f;
@@ -141,7 +143,7 @@ public class WeatherPlayer : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.L) || Input.GetAxis(P2_ABILITY_CHANGE) > 0.4f) && !isTriggerDown)
         {
             weatherIndex++;
-            if (weatherIndex == 3)
+            if (weatherIndex == 5)
             {
                 weatherIndex = 0;
             }
@@ -344,7 +346,7 @@ public class WeatherPlayer : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = useSprite;
 
         // Flip Sprite
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O) || Input.GetButtonDown(P2_WIND_SWITCH))
         {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         }

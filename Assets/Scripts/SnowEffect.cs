@@ -20,11 +20,12 @@ public class SnowEffect : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		GetComponent<AudioSource> ().Play ();
+		
 		playerScript = playerOne.GetComponent < Player >();
         initialState = playerScript.moveSpeed;
         wp = GameObject.Find("Player 2");
         wpScript = wp.GetComponent<WeatherPlayer>();
+		snowy = gameObject.GetComponent<AudioSource> ();
     }
 	
 	// Update is called once per frame
